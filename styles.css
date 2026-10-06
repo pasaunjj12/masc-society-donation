@@ -1,0 +1,84 @@
+body {
+    background-color: #000000;
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #F5F5F5;
+}
+header {
+    text-align: center;
+}
+form { 
+    text-align: center;
+    padding: 20px;
+}
+input[type="text"], input[type="email"], input[type="number"] {
+    background-color: #F5F5F5;
+    border: 2px solid #C99A3D;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+input[type="radio"] {
+    margin-left: 5px;
+}
+
+.donor-label {
+    display: block;
+}
+
+.donor-field {
+    margin: 15px auto;
+    text-align: left;
+    width: 200px;
+}
+
+h2 {
+    margin-top: 25px;
+    color: #E72A83
+}
+
+button {
+    background-color: #C99A3D; 
+    color: #000000; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button:hover {
+    color: #E72A83;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.amount-options {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid #C99A3D;
+    cursor: pointer;
+    }
+
+input[name="donation-amount"][type="radio"] {
+     display: none;  
+    }
+
+input[name="donation-amount"]:checked + .amount-options {
+    background-color: #E72A83
+}
+
+.amount-options:hover {
+    color: #C99A3D;
+}
+
+.custom-amount {
+    margin-top: 30px;
+}
+
+#custom-amount {
+    width: 150px;
+    margin-left: 8px;
+}
