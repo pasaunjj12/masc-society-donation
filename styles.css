@@ -63,8 +63,14 @@ button:active {
     }
 
 input[name="donation-amount"][type="radio"] {
-     display: none;  
-    }
+    position: absolute;
+    opacity: 0;
+}
+
+input[name="donation-amount"]:focus-visible + .amount-options {
+    outline: 2px solid #F5F5F5;
+    outline-offset: 3px;
+}
 
 input[name="donation-amount"]:checked + .amount-options {
     background-color: #E72A83
@@ -93,6 +99,7 @@ nav ul {
     gap: 25px;
     list-style: none;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -166,4 +173,15 @@ footer {
 .summary-row strong {
     margin-right: 10px;
     width: 180px;
+}
+
+.hero-logos img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-us h1,
+.contact h1,
+.checkout h1 {
+    color: #E72A83;
 }

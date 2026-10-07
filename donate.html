@@ -67,10 +67,12 @@
             <input type="radio" name="donation-amount" id="amount-50" value="50">
             <label class="amount-options" for="amount-50">$50</label>
 
-            <div class="custom-amount">
-              <label for="custom-amount">Custom Amount</label>
-              <input type="number" name="donation-amount" id="custom-amount" min="5">
-            </div>
+            <input required type="radio" name="donation-amount" id="amount-custom" value="custom">
+            <label class="amount-options" for="amount-custom">Other Amount</label>
+              <div class="custom-amount">
+                <label for="custom-amount">Custom Amount</label>
+                <input type="number" name="custom-amount" id="custom-amount" min="5">
+              </div>
 
               <button type="submit">Donate Now</button>
         </form>
