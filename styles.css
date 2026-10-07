@@ -11,7 +11,7 @@ form {
     text-align: center;
     padding: 20px;
 }
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"], input[type="email"], input[type="number"], textarea {
     background-color: #F5F5F5;
     border: 2px solid #C99A3D;
     padding: 5px;
@@ -81,4 +81,90 @@ input[name="donation-amount"]:checked + .amount-options {
 #custom-amount {
     width: 150px;
     margin-left: 8px;
+}
+
+.hero {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color:#E72A83;
+}
+
+.hero-button {
+    background-color:#C99A3D;
+    color: #000000;
+    padding-bottom: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.hero-button:hover {
+    color: #000000;
+    background-color: #E72A83;
+}
+
+.mission, .impact, .about-us, .contact, .contact-information, .checkout {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+h3 {
+    color: #E72A83;
+    margin-top: 30px;
+}
+
+.contact-information a {
+    color:#C99A3D;
+}
+
+.contact-information a:hover {
+    color:#E72A83;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tag-line {
+    font-style: italic;
+    color:#C99A3D;
+}
+
+.footer-logos img {
+    width: 80px;
+    
+}
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: center;
+}
+
+.summary-row strong {
+    margin-right: 10px;
+    width: 180px;
 }

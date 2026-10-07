@@ -1,68 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"
-  </head>
-  <body>
-    <header>
-      <h1>Support Masc Society | Built Like Her</h1>
-      <p>Empowering the culture. Uplifting our people.</p>
-      <img src="images/image0.png" alt="built like her logo" width="300">
-      <img src="images/image1 (1).png" alt="masc society logo" width="300">
-    </header>
-    <main>
-        <form>
-            <h2>Donor Information</h2>
-            <div class="donor-field">
-              <label class="donor-label" for="first-name">First Name (required):</label>
-              <input required id="first-name" name="first-name" type="text" placeholder="Jane">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <title>Masc Society | Built Like Her</title>
+    </head>
+    <body>
+      <header>
+        <nav>
+          <ul>
+            <li <a href="index.html">Home</a></li>
+            <li <a href="about-us.html">About Us</a></li>
+            <li <a href="donate.html">Donate</a></li>
+            <li <a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="hero">
+            <h1>Masc Society | Built Like Her</h1>
+            <p>Empowering the culture. Uplifting our people.</p>
+            <div class="hero-logosS">
+              <img src="images/image0.png" alt="built like her logo" width="300">
+              <img src="images/image1 (1).png" alt="masc society logo" width="300">
             </div>
-
-            <div class="donor-field">
-              <label class="donor-label" for="last-name">Last Name (required):</label>
-              <input required id="last-name" name="last-name" type="text" placeholder="Doe">
-            </div>
-
-            <div class="donor-field">
-              <label class="donor-label" for="email">Email</label>
-              <input required id="email" type="email" name="email" placeholder="example@email.com">
-            </div>
-
-            <h2>Donation Information</h2>
-
-            <p>What type of donation would you like to make?</p>
-            <label  for="one-time-donation">One-Time Donation</label>
-            <input required type="radio" name="donation-type" id="one-time-donation" value="one-time-donation">
-            
-            <label  for="recurring-donation">Recurring Donation</label>
-            <input type="radio" name="donation-type" id="recurring-donation" value="recurring-donation">
-        
-            <p>Donation Amount ($):</p>
-
-            <input type="radio" name="donation-amount" id="amount-5" value="5">
-            <label class="amount-options" for="amount"-5>$5</label>
-
-            <input type="radio" name="donation-amount" id="amount-10" value="10">
-            <label class="amount-options" for="amount-10">$10</label>
-
-            <input type="radio" name="donation-amount" id="amount-20" value="20">
-            <label class="amount-options" for="amount-20">$20</label>
-
-            <input type="radio" name="donation-amount" id="amount-25" value="25">
-            <label class="amount-options" for="amount-25">$25</label>
-            
-            <input type="radio" name="donation-amount" id="amount-50" value="50">
-            <label class="amount-options" for="amount-50">$50</label>
-
-            <div class="custom-amount">
-              <label for="custom-amount">Custom Amount</label>
-              <input type="number" name="donation-amount" id="custom-amount" min="5">
-            </div>
-
-              <button type="submit">Donate Now</button>
-        </form>
-    </main>
-  </body>
+            <a href="donate.html" class="hero-button">Support Our Mission</a>
+        </section>
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>Masc Society is dedicated to empowering masculine women by creating a space where they can connect, grow, and feel seen, supported, and celebrated. Built Like Her extends that vision by creating a community where feminine women can embrace their individuality, confidence, and strength. Together, we are committed to uplifting the LGBTQIA+ community while making a positive impact in the community as a whole through outreach, service, giving back, and meaningful opportunities that bring people together. Our mission is to build stronger connections, support those in need, and create lasting change—one community at a time.</p>
+        </section>
+        <section class="impact">
+            <h2>Community Impact</h2>
+            <p>The impact we strive to make within our community is rooted in supporting growth, creating positive change, promoting equality, and encouraging community development.</p>
+            <h3>Community Projects</h3>
+            <p>As we grow, this space will highlight the projects, outreach efforts, events, and acts of service that allow us to give back and make a difference in our community.</p>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2026 Masc Society | Built Like Her</p>
+        <p class=""tag-line">Empowering the culture. Uplifting our people.</p>
+      </footer>
+    </body>
 </html>
