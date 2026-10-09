@@ -4,20 +4,31 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #F5F5F5;
 }
+
 header {
     text-align: center;
 }
+
 form { 
     text-align: center;
     padding: 20px;
+    border: 2px solid #C99A3D;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-sizing: border-box;
 }
+
 input[type="text"], input[type="email"], input[type="number"], textarea {
     background-color: #F5F5F5;
     border: 2px solid #C99A3D;
     padding: 5px;
     border-radius: 5px;
-
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
 }
+
 input[type="radio"] {
     margin-left: 5px;
 }
@@ -184,4 +195,17 @@ footer {
 .contact h1,
 .checkout h1 {
     color: #E72A83;
+}
+
+.contact-form .donor-field {
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info h2 {
+    margin-bottom: 10px;
 }
