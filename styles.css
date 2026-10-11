@@ -242,3 +242,8 @@ footer {
 .about-page main {
     flex: 1;
 }
+
+.about-page footer {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
