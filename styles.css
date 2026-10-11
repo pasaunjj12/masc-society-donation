@@ -232,3 +232,12 @@ footer {
     padding-bottom: 30px;
 }
 
+.about-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page main {
+    flex: 1;
+}
