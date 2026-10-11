@@ -210,3 +210,25 @@ footer {
 .contact-info h2 {
     margin-bottom: 10px;
 }
+
+/* About Us page spacing */
+
+.about-us {
+    max-width: 750px;
+    margin: 35px auto 0;
+    padding: 0 20px;
+}
+
+.about-us h1 {
+    margin-bottom: 25px;
+}
+
+.about-us p {
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.about-us + footer {
+    padding-bottom: 30px;
+}
+
