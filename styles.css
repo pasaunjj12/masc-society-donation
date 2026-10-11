@@ -245,5 +245,9 @@ footer {
 
 .about-page footer {
     margin-top: auto;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.about-page footer p:last-child {
+    margin-bottom: 0;
 }
