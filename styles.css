@@ -1832,3 +1832,47 @@ img {
     height: 88px;
   }
 }
+
+
+/* HOMEPAGE: luxury editorial layout blended with original Masc Society colors */
+.home-page .hero{grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);gap:clamp(28px,5vw,70px);min-height:460px;padding-top:clamp(58px,7vw,94px);padding-bottom:clamp(58px,7vw,94px);background:linear-gradient(112deg,#fff 0%,#fff 68%,#fff5fa 100%)}
+.home-page .hero::before{width:6px;background:linear-gradient(to bottom,var(--pink) 0 68%,var(--gold) 68% 100%)}
+.home-page .hero h1{max-width:760px;font-size:clamp(2.7rem,5.3vw,4.7rem);letter-spacing:-.035em;line-height:1.08}
+.home-page .hero h1 span{display:block;margin-top:8px;color:var(--pink-dark)}
+.home-page .hero-description{max-width:570px;line-height:1.9}
+.home-page .hero-logos{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:16px;width:100%}
+.home-page .logo-card{width:min(100%,220px);height:145px;padding:15px;border-color:#eee6e9;border-radius:3px;box-shadow:0 12px 34px rgba(21,21,21,.055)}
+.home-page .logo-card img{width:100%;height:100%;max-height:115px;object-fit:contain}
+.home-page .values{max-width:none;padding:0 max(24px,calc((100% - var(--content-width))/2));background:#fff9fc;border-top:1px solid #f4e4ec;border-bottom:1px solid #f4e4ec}
+.home-page .value-item{padding:30px 20px}
+.home-page .value-number{color:var(--gold-dark);font-family:var(--font-main);font-size:.78rem;letter-spacing:.16em}
+.home-page .value-item h2{margin-bottom:9px;font-family:var(--font-main);font-size:1.05rem;font-weight:800}
+.home-page .value-item p{max-width:280px;margin:0 auto;line-height:1.65}
+.home-page .mission{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start;gap:clamp(32px,6vw,82px);max-width:none;padding:clamp(58px,7vw,94px) max(24px,calc((100% - var(--content-width))/2));background:#fff}
+.home-page .mission .section-intro{max-width:440px;margin:0;text-align:left}
+.home-page .mission .section-intro h2{font-size:clamp(2.15rem,3.8vw,3.3rem)}
+.home-page .mission .section-intro h2 span{color:var(--pink-dark)}
+.home-page .mission-content{max-width:650px;margin:0;padding-top:8px}
+.home-page .mission-content p{color:var(--black-soft);line-height:1.9}
+.home-page .branches{background:#fff8fb;border-top:1px solid #f4e4ec;border-bottom:1px solid #f4e4ec}
+.home-page .branches .section-heading{max-width:740px;margin:0 auto 38px;text-align:center}
+.home-page .branches .section-heading h2{margin-bottom:14px;font-size:clamp(2rem,3.7vw,3rem)}
+.home-page .branches .section-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--gray)}
+.home-page .branch-card{min-height:315px;padding:clamp(25px,3.4vw,42px);border:1px solid #ede3e7;border-top:4px solid var(--pink);border-radius:3px;box-shadow:0 12px 35px rgba(21,21,21,.045);background:#fff}
+.home-page .built-card{border-top-color:var(--gold)}
+.home-page .branch-label{margin-bottom:13px;font-size:.7rem;letter-spacing:.15em}
+.home-page .branch-card h3{margin-bottom:14px;font-size:clamp(1.55rem,2.4vw,2rem);letter-spacing:-.02em}
+.home-page .branch-card p:not(.branch-label){color:var(--gray);line-height:1.8}
+.home-page .branch-link{display:inline-flex;align-items:center;gap:8px;padding-bottom:5px;border-bottom:1px solid var(--gold);font-weight:800}
+.home-page .impact{background:var(--black);color:#fff}
+.home-page .impact h2{color:#fff;font-size:clamp(2rem,4vw,3.3rem)}
+.home-page .impact h2 span{display:block;color:#f0c76f}
+.home-page .impact .eyebrow{color:#f0c76f}
+.home-page .impact-content p{color:#f0f0f0;line-height:1.85}
+.home-page .impact .hero-button{margin-top:12px;background:var(--pink);color:#fff}
+.home-page .join-section{padding:clamp(55px,7vw,86px) 24px;background:#fff}
+.home-page .join-section h2{font-size:clamp(2rem,3.8vw,3rem)}
+.home-page .join-section p:not(.eyebrow){max-width:680px;margin:0 auto 25px;color:var(--gray)}
+@media(max-width:1000px){.home-page .hero{grid-template-columns:minmax(0,1fr) 200px;gap:28px}.home-page .logo-card{width:190px;height:125px}}
+@media(max-width:700px){.home-page .hero{grid-template-columns:minmax(0,1fr);gap:28px;padding:48px 22px 42px}.home-page .hero h1{font-size:clamp(2.35rem,10vw,3.25rem)}.home-page .hero-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:360px;margin:0 auto}.home-page .logo-card{width:100%;height:100px;padding:8px}.home-page .logo-card img{max-height:80px}.home-page .values{grid-template-columns:minmax(0,1fr);padding:0 20px}.home-page .value-item,.home-page .value-item:nth-child(2),.home-page .value-item:nth-child(3){padding:21px 12px;border-right:0;border-bottom:1px solid #f0e1e7}.home-page .value-item:last-child{border-bottom:0}.home-page .mission{grid-template-columns:minmax(0,1fr);gap:20px;padding:48px 22px}.home-page .mission .section-intro{max-width:100%}.home-page .mission-content{padding-top:0}.home-page .branch-card{min-height:0;padding:27px 23px}}
+@media(max-width:380px){.home-page .hero-logos{gap:8px}.home-page .logo-card{height:88px;padding:6px}}
