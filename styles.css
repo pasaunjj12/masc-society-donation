@@ -509,10 +509,12 @@ section {
 }
 
 .mission-content {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  align-items: start;
-  gap: 45px;
+  display: block;
+  max-width: 850px;
+}
+
+.mission-content p {
+  margin-bottom: 18px;
 }
 
 .mission-content h2 {
