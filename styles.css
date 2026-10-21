@@ -1,253 +1,1716 @@
+
+/* ==========================================================
+   MASC SOCIETY | BUILT LIKE HER
+   Complete White-Background Redesign
+   Hot Pink | Gold | Black | White
+   ========================================================== */
+
+
+/* ==================== 1. BRAND COLORS ==================== */
+
+:root {
+  --pink: #E72A83;
+  --pink-dark: #C51D6C;
+  --pink-light: #FFF0F7;
+
+  --gold: #C99A3D;
+  --gold-dark: #8A651E;
+  --gold-light: #E8D3A5;
+
+  --black: #151515;
+  --black-soft: #333333;
+
+  --white: #FFFFFF;
+  --off-white: #FFFFFF;
+
+  --gray: #666666;
+  --gray-light: #E9E6E5;
+  --border: #E7E2E4;
+
+  --font-main: "Trebuchet MS", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+
+  --content-width: 1160px;
+  --section-space: 72px;
+
+  --radius: 10px;
+  --transition: 0.25s ease;
+}
+
+
+/* ==================== 2. RESET & GLOBAL STYLES ==================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
-    background-color: #000000;
-    font-style: normal;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #F5F5F5;
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-header {
-    text-align: center;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-form { 
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #C99A3D;
-    border-radius: 12px;
-    max-width: 500px;
-    margin: 20px auto;
-    box-sizing: border-box;
+a {
+  color: var(--pink-dark);
+  text-decoration: none;
+  transition: color var(--transition);
 }
 
-input[type="text"], input[type="email"], input[type="number"], textarea {
-    background-color: #F5F5F5;
-    border: 2px solid #C99A3D;
-    padding: 5px;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
+a:hover {
+  color: var(--gold-dark);
 }
 
-input[type="radio"] {
-    margin-left: 5px;
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
-.donor-label {
-    display: block;
+button,
+input[type="submit"] {
+  cursor: pointer;
 }
 
-.donor-field {
-    margin: 15px auto;
-    text-align: left;
-    width: 200px;
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  color: var(--black);
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
 }
 
 h2 {
-    margin-top: 25px;
-    color: #E72A83
-}
-
-button {
-    background-color: #C99A3D; 
-    color: #000000; 
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-button:hover {
-    color: #E72A83;
-}
-
-button:active {
-    transform: translateY(2px);
-}
-
-.amount-options {
-    display: inline-block;
-    padding: 8px 15px;
-    border: 2px solid #C99A3D;
-    cursor: pointer;
-    }
-
-input[name="donation-amount"][type="radio"] {
-    position: absolute;
-    opacity: 0;
-}
-
-input[name="donation-amount"]:focus-visible + .amount-options {
-    outline: 2px solid #F5F5F5;
-    outline-offset: 3px;
-}
-
-input[name="donation-amount"]:checked + .amount-options {
-    background-color: #E72A83
-}
-
-.amount-options:hover {
-    color: #C99A3D;
-}
-
-.custom-amount {
-    margin-top: 30px;
-}
-
-#custom-amount {
-    width: 150px;
-    margin-left: 8px;
-}
-
-.hero {
-    text-align: center;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    list-style: none;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: #F5F5F5;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color:#E72A83;
-}
-
-.hero-button {
-    background-color:#C99A3D;
-    color: #000000;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-.hero-button:hover {
-    color: #000000;
-    background-color: #E72A83;
-}
-
-.mission, .impact, .about-us, .contact, .contact-information, .checkout {
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-    margin-top: 50px;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
 }
 
 h3 {
-    color: #E72A83;
-    margin-top: 30px;
+  font-size: 1.25rem;
 }
 
-.contact-information a {
-    color:#C99A3D;
+section {
+  scroll-margin-top: 100px;
 }
 
-.contact-information a:hover {
-    color:#E72A83;
+::selection {
+  background: var(--pink);
+  color: var(--white);
 }
 
-footer {
-    text-align: center;
-    margin-top: 50px;
+
+/* ==================== 3. SHARED LAYOUT ==================== */
+
+.section-padding {
+  padding: var(--section-space) 24px;
 }
 
-.tag-line {
-    font-style: italic;
-    color:#C99A3D;
+.section-intro {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
 }
 
-.footer-logos img {
-    width: 80px;
-    
-}
-.footer-logos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.section-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--gray);
 }
 
-.summary-row {
-    display: flex;
-    justify-content: center;
+.section-heading {
+  margin-bottom: 18px;
 }
 
-.summary-row strong {
-    margin-right: 10px;
-    width: 180px;
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--pink-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
-.hero-logos img {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
+.text-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  font-size: 0.92rem;
+  font-weight: 800;
 }
 
-.about-us h1,
-.contact h1,
-.checkout h1 {
-    color: #E72A83;
+.mission-content,
+.story-content,
+.purpose-content,
+.built-mission-content,
+.impact-content,
+.built-impact-content,
+.donation-content,
+.contact-information,
+.about-hero-content,
+.built-hero-content,
+.built-statement,
+.community-standard {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.contact-form .donor-field {
-    width: 100%;
-    max-width: 400px;
+.mission-content,
+.story-content,
+.purpose-content,
+.built-mission-content,
+.impact-content,
+.built-impact-content,
+.donation-content {
+  max-width: 900px;
 }
 
-.contact-info p {
-    margin: 10px 0;
+.mission-content p,
+.story-content p,
+.purpose-content p,
+.built-mission-content p,
+.impact-content p,
+.built-impact-content p,
+.donation-content p {
+  color: var(--gray);
 }
 
-.contact-info h2 {
-    margin-bottom: 10px;
+
+/* ==================== 4. HEADER & NAVIGATION ==================== */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
-/* About Us page spacing */
-
-.about-us {
-    max-width: 750px;
-    margin: 35px auto 0;
-    padding: 0 20px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  width: 100%;
+  max-width: 1320px;
+  min-height: 88px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  background: var(--white);
 }
 
-.about-us h1 {
-    margin-bottom: 25px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  color: var(--black);
 }
 
-.about-us p {
-    line-height: 1.7;
-    margin-bottom: 22px;
+.brand:hover {
+  color: var(--black);
 }
 
-.about-us + footer {
-    padding-bottom: 30px;
+.brand-name {
+  color: var(--black);
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
-.about-page {
-    min-height: 100vh;
-    display: flex;
+.brand-divider {
+  width: 2px;
+  height: 35px;
+  flex-shrink: 0;
+  background: var(--gold);
+}
+
+.brand-subtitle {
+  color: var(--gray);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.nav-links a {
+  color: var(--black);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--pink-dark);
+}
+
+.nav-links .nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--pink);
+  border-radius: 4px;
+  background: var(--pink);
+  color: var(--white);
+}
+
+.nav-links .nav-button:hover {
+  border-color: var(--pink-dark);
+  background: var(--pink-dark);
+  color: var(--white);
+}
+
+
+/* ==================== 5. BUTTONS ==================== */
+
+.hero-button,
+.secondary-button,
+.branch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.hero-button {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+}
+
+.hero-button:hover {
+  border-color: var(--pink-dark);
+  background: var(--pink-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  border-color: var(--gold);
+  background: var(--white);
+  color: var(--black);
+}
+
+.secondary-button:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--black);
+}
+
+.branch-link {
+  border-color: var(--black);
+  background: var(--black);
+  color: var(--white);
+}
+
+.branch-link:hover {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 26px;
+}
+
+
+/* ==================== 6. HOMEPAGE HERO ==================== */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(200px, 0.7fr);
+  align-items: center;
+  gap: 42px;
+  min-height: 400px;
+  padding: 65px max(6%, calc((100% - var(--content-width)) / 2));
+  overflow: hidden;
+  background: var(--white);
+  color: var(--black);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--pink);
+  content: "";
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  max-width: 720px;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+.hero h1 span {
+  color: var(--pink-dark);
+}
+
+.hero-description {
+  max-width: 590px;
+  color: var(--gray);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.hero .eyebrow {
+  color: var(--pink-dark);
+}
+
+.hero-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 165px);
+  height: 135px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+}
+
+.logo-card img {
+  width: 100%;
+  height: 100%;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+
+/* ==================== 7. HOMEPAGE VALUES ==================== */
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.value-item {
+  padding: 25px 18px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+
+.value-item:last-child {
+  border-right: 0;
+}
+
+.value-number {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--pink-dark);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.value-item p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+
+/* ==================== 8. MISSION SECTION ==================== */
+
+.mission {
+  background: var(--white);
+}
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 45px;
+}
+
+.mission-content h2 {
+  margin-bottom: 0;
+}
+
+.mission-content > div > p {
+  color: var(--gray);
+}
+
+
+/* ==================== 9. BRANCH CARDS ==================== */
+
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.branch-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.035);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.branch-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.075);
+}
+
+.masc-card {
+  border-top: 4px solid var(--pink);
+}
+
+.built-card {
+  border-top: 4px solid var(--gold);
+}
+
+.branch-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 155px;
+  height: 105px;
+  margin: 0 auto 22px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--white);
+}
+
+.branch-logo img {
+  width: 100%;
+  height: 100%;
+  max-height: 85px;
+  object-fit: contain;
+}
+
+.branch-label {
+  margin-bottom: 9px;
+  color: var(--pink-dark);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.built-card .branch-label {
+  color: var(--gold-dark);
+}
+
+.branch-card h3 {
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+}
+
+.branch-card p {
+  flex-grow: 1;
+  color: var(--gray);
+}
+
+.branch-card .branch-link {
+  margin-top: 12px;
+}
+
+
+/* ==================== 10. IMPACT & CALL TO ACTION ==================== */
+
+.impact,
+.built-impact {
+  background: var(--white);
+}
+
+.impact-content,
+.built-impact-content {
+  text-align: center;
+}
+
+.impact-content p,
+.built-impact-content p {
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.join-section,
+.about-cta,
+.built-cta {
+  padding: 62px 24px;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.join-section h2,
+.about-cta h2,
+.built-cta h2 {
+  max-width: 750px;
+  margin: 0 auto 18px;
+  color: var(--black);
+}
+
+.join-section p,
+.about-cta p,
+.built-cta p {
+  max-width: 660px;
+  margin: 0 auto 24px;
+  color: var(--gray);
+}
+
+
+/* ==================== 11. ABOUT PAGE ==================== */
+
+.about-hero {
+  padding: 65px 24px;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-hero-content {
+  max-width: 850px;
+}
+
+.about-hero h1 {
+  margin-bottom: 18px;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--gray);
+  font-size: 1.02rem;
+}
+
+.about-hero .eyebrow {
+  color: var(--pink-dark);
+}
+
+.about-story {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+}
+
+.story-content {
+  max-width: 860px;
+}
+
+.story-content h2,
+.purpose-content h2 {
+  margin-bottom: 22px;
+}
+
+.story-content p,
+.purpose-content p {
+  color: var(--gray);
+}
+
+.about-purpose {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.purpose-content {
+  max-width: 900px;
+}
+
+.about-values {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.value-card {
+  padding: 26px 23px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.value-card h3 {
+  margin-bottom: 12px;
+  color: var(--pink-dark);
+}
+
+.value-card p {
+  margin-bottom: 0;
+  color: var(--gray);
+  font-size: 0.94rem;
+}
+
+.about-branches {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+
+/* ==================== 12. BUILT LIKE HER PAGE ==================== */
+
+.built-like-her-page {
+  background: var(--white);
+}
+
+.built-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(170px, 0.6fr);
+  align-items: center;
+  gap: 42px;
+  padding: 68px max(6%, calc((100% - var(--content-width)) / 2));
+  background: var(--white);
+  color: var(--black);
+  border-bottom: 1px solid var(--border);
+}
+
+.built-hero-content {
+  max-width: 760px;
+  margin: 0;
+}
+
+.built-hero h1 {
+  margin-bottom: 18px;
+}
+
+.built-hero-description {
+  max-width: 650px;
+  color: var(--gray);
+  font-size: 1.02rem;
+}
+
+.built-hero .eyebrow {
+  color: var(--pink-dark);
+}
+
+.built-hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 180px;
+  height: 150px;
+  justify-self: center;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+}
+
+.built-hero-logo img {
+  width: 100%;
+  height: 100%;
+  max-height: 125px;
+  object-fit: contain;
+}
+
+.built-statement {
+  max-width: 860px;
+  padding: 55px 24px;
+  background: var(--white);
+  text-align: center;
+}
+
+.built-statement h2 {
+  margin-bottom: 18px;
+}
+
+.built-statement p {
+  color: var(--gray);
+}
+
+.built-mission {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.built-mission-content {
+  max-width: 900px;
+}
+
+.built-values {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+}
+
+.built-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.built-value-card {
+  padding: 24px 20px;
+  border: 1px solid var(--border);
+  border-bottom: 3px solid var(--gold);
+  border-radius: 7px;
+  background: var(--white);
+}
+
+.built-value-card h3 {
+  color: var(--pink-dark);
+}
+
+.built-value-card p {
+  margin-bottom: 0;
+  color: var(--gray);
+  font-size: 0.93rem;
+}
+
+.parent-organization {
+  display: grid;
+  grid-template-columns: 115px minmax(0, 1fr);
+  align-items: center;
+  gap: 25px;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.parent-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 95px;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--white);
+}
+
+.parent-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.parent-organization p {
+  color: var(--gray);
+}
+
+
+/* ==================== 13. CONTACT PAGE ==================== */
+
+.contact-page {
+  background: var(--white);
+}
+
+.contact-hero {
+  padding: 58px 24px;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-hero h1 {
+  margin-bottom: 16px;
+}
+
+.contact-hero p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--gray);
+}
+
+
+/* ==================== 14. MEMBERSHIP REQUIREMENTS ==================== */
+
+.requirements-section {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+}
+
+.requirements-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.requirement-card {
+  position: relative;
+  padding: 21px 22px 21px 26px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+}
+
+.requirement-card::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  border-radius: 7px 0 0 7px;
+  background: var(--pink);
+  content: "";
+}
+
+.requirement-card h3 {
+  margin-bottom: 9px;
+  font-size: 1.04rem;
+}
+
+.requirement-card p {
+  margin-bottom: 0;
+  color: var(--gray);
+  font-size: 0.93rem;
+}
+
+.community-standard {
+  max-width: 1000px;
+  margin-top: 36px;
+  padding: 28px;
+  border: 1px solid var(--gold-light);
+  border-radius: 7px;
+  background: var(--white);
+  text-align: center;
+}
+
+.community-standard h2 {
+  margin-bottom: 14px;
+  font-size: 1.7rem;
+}
+
+.community-standard p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--gray);
+}
+
+
+/* ==================== 15. MEMBERSHIP & CONTACT FORMS ==================== */
+
+.membership-section,
+.contact-section {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+}
+
+.contact-section {
+  border-top: 1px solid var(--border);
+}
+
+.membership-form,
+.contact-form {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.035);
+}
+
+.donor-field {
+  margin-bottom: 20px;
+}
+
+.donor-label,
+.membership-form label,
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--black);
+  font-size: 0.91rem;
+  font-weight: 800;
+}
+
+.membership-form input:not([type="checkbox"]):not([type="radio"]),
+.membership-form select,
+.membership-form textarea,
+.contact-form input:not([type="checkbox"]):not([type="radio"]),
+.contact-form select,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #D6D0D2;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--black);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.membership-form input:focus,
+.membership-form select:focus,
+.membership-form textarea:focus,
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(231, 42, 131, 0.12);
+  outline: none;
+}
+
+.membership-form textarea,
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.membership-form select,
+.contact-form select {
+  cursor: pointer;
+}
+
+.membership-form input::placeholder,
+.membership-form textarea::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777777;
+  opacity: 1;
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 17px 0;
+  color: var(--gray);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.form-consent input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--pink);
+}
+
+.form-consent label {
+  margin: 0;
+  color: var(--gray);
+  font-weight: 400;
+}
+
+.membership-form button,
+.membership-form input[type="submit"],
+.contact-form button,
+.contact-form input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 12px 24px;
+  border: 1px solid var(--pink);
+  border-radius: 4px;
+  background: var(--pink);
+  color: var(--white);
+  font-weight: 800;
+  transition: background var(--transition);
+}
+
+.membership-form button:hover,
+.membership-form input[type="submit"]:hover,
+.contact-form button:hover,
+.contact-form input[type="submit"]:hover {
+  border-color: var(--pink-dark);
+  background: var(--pink-dark);
+}
+
+.form-note {
+  color: var(--gray);
+  font-size: 0.84rem;
+}
+
+
+/* ==================== 16. DONATIONS ==================== */
+
+.donation-section {
+  padding: var(--section-space) 24px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.donation-content {
+  max-width: 850px;
+  text-align: center;
+}
+
+.donation-content h2 {
+  margin-bottom: 18px;
+}
+
+.donation-content p {
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.donation-notice {
+  max-width: 700px;
+  margin: 25px auto 0;
+  padding: 20px 23px;
+  border: 1px solid var(--gold-light);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--gray);
+  text-align: left;
+}
+
+.donation-notice strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--black);
+}
+
+.donation-notice p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==================== 17. CONTACT INFORMATION ==================== */
+
+.contact-information {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 900px;
+  margin-top: 40px;
+}
+
+.contact-information > div {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+}
+
+.contact-information h3 {
+  margin-bottom: 12px;
+  color: var(--pink-dark);
+}
+
+.contact-information p {
+  margin-bottom: 8px;
+  color: var(--gray);
+  overflow-wrap: anywhere;
+}
+
+.contact-information p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==================== 18. FOOTER ==================== */
+
+.site-footer {
+  padding: 42px 24px 20px;
+  background: var(--white);
+  color: var(--black);
+  border-top: 2px solid var(--pink);
+}
+
+.footer-brand {
+  max-width: 1160px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.footer-brand h2 {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.footer-brand p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-links a {
+  color: var(--black);
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--pink-dark);
+}
+
+.copyright {
+  margin: 19px auto 0;
+  color: var(--gray);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+
+/* ==================== 19. TABLET RESPONSIVENESS ==================== */
+
+@media (max-width: 1000px) {
+  :root {
+    --section-space: 60px;
+  }
+
+  .navbar {
+    gap: 18px;
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 25px;
+    padding-right: 5%;
+    padding-left: 6%;
+  }
+
+  .hero-logos {
+    gap: 10px;
+  }
+
+  .logo-card {
+    height: 115px;
+    padding: 9px;
+  }
+
+  .logo-card img {
+    max-height: 95px;
+  }
+
+  .built-hero {
+    grid-template-columns: minmax(0, 1fr) 160px;
+    gap: 25px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .built-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ==================== 20. MOBILE RESPONSIVENESS ==================== */
+
+@media (max-width: 700px) {
+  :root {
+    --section-space: 46px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 7vw, 2.3rem);
+  }
+
+  .section-padding {
+    padding: var(--section-space) 20px;
+  }
+
+  .section-intro {
+    margin-bottom: 30px;
+  }
+
+  /* Mobile navigation */
+
+  .navbar {
     flex-direction: column;
-    margin: 0;
+    align-items: stretch;
+    gap: 15px;
+    padding: 17px 18px;
+  }
+
+  .brand {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 1.02rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.67rem;
+  }
+
+  .brand-divider {
+    height: 30px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 10px 14px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.79rem;
+  }
+
+  .nav-links .nav-button {
+    padding: 8px 11px;
+  }
+
+  /* Buttons */
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-button,
+  .secondary-button {
+    padding: 11px 16px;
+  }
+
+  /* Homepage */
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 27px;
+    min-height: auto;
+    padding: 48px 22px 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-description {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 0.96rem;
+  }
+
+  .hero-logos {
+    gap: 12px;
+  }
+
+  .logo-card {
+    width: min(42%, 140px);
+    height: 100px;
+    padding: 8px;
+  }
+
+  .logo-card img {
+    max-height: 82px;
+  }
+
+  /* Values */
+
+  .values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 12px;
+  }
+
+  .value-item {
+    padding: 19px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .value-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .value-item:nth-child(3),
+  .value-item:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  /* Mission */
+
+  .mission-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  /* Branch cards */
+
+  .branch-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .branch-card {
+    padding: 24px 21px;
+  }
+
+  .branch-logo {
+    height: 95px;
+    max-width: 140px;
+    margin-bottom: 19px;
+  }
+
+  .branch-logo img {
+    max-height: 77px;
+  }
+
+  .branch-card h3 {
+    font-size: 1.48rem;
+  }
+
+  /* About */
+
+  .about-hero {
+    padding: 48px 22px;
+  }
+
+  .about-hero p {
+    font-size: 0.96rem;
+  }
+
+  .values-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .value-card {
+    padding: 22px;
+  }
+
+  /* Built Like Her */
+
+  .built-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 48px 22px;
+    text-align: center;
+  }
+
+  .built-hero-content {
+    margin: 0 auto;
+  }
+
+  .built-hero-description {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 0.96rem;
+  }
+
+  .built-hero .hero-actions {
+    justify-content: center;
+  }
+
+  .built-hero-logo {
+    width: 135px;
+    height: 110px;
+    padding: 10px;
+  }
+
+  .built-hero-logo img {
+    max-height: 90px;
+  }
+
+  .built-statement {
+    padding: 42px 22px;
+  }
+
+  .built-values-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .built-value-card {
+    padding: 22px;
+  }
+
+  .parent-organization {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 17px;
+    padding: 23px;
+    text-align: center;
+  }
+
+  .parent-logo {
+    width: 100px;
+    height: 82px;
+  }
+
+  /* Contact */
+
+  .contact-hero {
+    padding: 45px 22px;
+  }
+
+  .requirements-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .requirement-card {
+    padding: 19px 17px 19px 23px;
+  }
+
+  .community-standard {
+    margin-top: 25px;
+    padding: 22px 18px;
+  }
+
+  /* Forms */
+
+  .membership-form,
+  .contact-form {
+    padding: 22px 17px;
+  }
+
+  .membership-form button,
+  .membership-form input[type="submit"],
+  .contact-form button,
+  .contact-form input[type="submit"] {
+    width: 100%;
+  }
+
+  .donation-notice {
+    padding: 17px;
+  }
+
+  .contact-information {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  /* Footer */
+
+  .site-footer {
+    padding: 33px 18px 17px;
+  }
+
+  .footer-links {
+    gap: 12px 17px;
+  }
+
+  .footer-links a {
+    font-size: 0.81rem;
+  }
 }
 
-.about-page main {
-    flex: 1;
+
+/* ==================== 21. SMALL PHONES ==================== */
+
+@media (max-width: 380px) {
+  .navbar {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .brand-name {
+    font-size: 0.94rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.61rem;
+  }
+
+  .nav-links {
+    gap: 10px 11px;
+  }
+
+  .nav-links a {
+    font-size: 0.73rem;
+  }
+
+  .hero {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions a {
+    width: 100%;
+  }
+
+  .logo-card {
+    height: 86px;
+  }
+
+  .logo-card img {
+    max-height: 70px;
+  }
+
+  .membership-form,
+  .contact-form {
+    padding: 18px 13px;
+  }
 }
 
-.about-page footer {
-    margin-top: auto;
-    padding-bottom: 11px;
-}
 
-.about-page footer p:last-child {
-    margin-bottom: 0;
+/* ==================== 22. REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
