@@ -1813,3 +1813,10 @@ body:has(main > .hero) .join-section p {
     max-height: 110px;
   }
 }
+
+@media (max-width: 650px) {
+  .about-page nav ul li,
+  .built-like-her-page nav ul li {
+    padding-left: 6px;
+  }
+}
