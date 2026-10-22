@@ -831,8 +831,8 @@ body:has(main > .hero) .join-section p {
   display: block;
   width: 100%;
   max-width: 700px;
-  margin: 12px auto 0 !important;
-  text-align: center !important;
+  margin: 12px 0 0 !important;
+  text-align: left !important;
 }
 .built-like-her-page .built-statement {
   padding: 42px 6%;
@@ -1209,17 +1209,17 @@ body:has(main > .hero) .join-section p {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 40px;
+  gap: 28px;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 30px;
+  max-width: 1000px;
+  margin: 0 auto 24px;
 }
 .footer-logos img {
   display: block;
-  flex: 0 1 190px;
-  width: 190px;
-  max-width: 190px;
-  height: 130px;
+  flex: 0 1 160px;
+  width: 100%;
+  max-width: 160px;
+  height: 105px;
   margin: 0;
   object-fit: contain;
 }
