@@ -1038,6 +1038,24 @@ body:has(main > .hero) .join-section p {
   max-height: 155px;
   object-fit: contain;
 }
+
+/* Keep the About hero aligned like Get Involved, with smaller logos. */
+.about-page .about-hero .about-hero-content {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.about-page .about-hero .contact-hero-logos {
+  flex: 0 0 190px;
+  gap: 14px;
+}
+.about-page .about-hero .contact-hero-logos img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 100px;
+}
 /* Contact requirements */
 .contact-page .requirements-section {
   background: var(--masc-light);
@@ -1563,6 +1581,19 @@ body:has(main > .hero) .join-section p {
   }
   .contact-page .contact-hero-logos img,
   .about-page .contact-hero-logos img {
+    width: calc(50% - 12px);
+    max-width: 145px;
+    max-height: 110px;
+  }
+
+  .about-page .about-hero .contact-hero-logos {
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 18px;
+  }
+  .about-page .about-hero .contact-hero-logos img {
     width: calc(50% - 12px);
     max-width: 145px;
     max-height: 110px;
