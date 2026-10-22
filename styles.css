@@ -1709,3 +1709,76 @@ body:has(main > .hero) .join-section p {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* FINAL ABOUT HERO OVERRIDE — mirror the Get Involved header layout */
+@media (min-width: 651px) {
+  body.about-page main > section.about-hero {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 45px !important;
+    text-align: left !important;
+  }
+
+  body.about-page main > section.about-hero > .about-hero-content {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  body.about-page main > section.about-hero > .contact-hero-logos {
+    display: flex !important;
+    flex: 0 0 190px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  body.about-page main > section.about-hero > .contact-hero-logos img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 150px !important;
+    max-height: 100px !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 650px) {
+  body.about-page main > section.about-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+
+  body.about-page main > section.about-hero > .about-hero-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.about-page main > section.about-hero > .contact-hero-logos {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+
+  body.about-page main > section.about-hero > .contact-hero-logos img {
+    width: calc(50% - 12px) !important;
+    max-width: 145px !important;
+    max-height: 110px !important;
+    object-fit: contain !important;
+  }
+}
