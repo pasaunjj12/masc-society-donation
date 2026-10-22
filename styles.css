@@ -980,7 +980,8 @@ body:has(main > .hero) .join-section p {
 .contact-page main {
   background: var(--masc-white);
 }
-.contact-page .contact-hero {
+.contact-page .contact-hero,
+.about-page .about-hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -989,7 +990,8 @@ body:has(main > .hero) .join-section p {
   padding-bottom: 95px;
   text-align: left;
 }
-.contact-page .contact-hero-content {
+.contact-page .contact-hero-content,
+.about-page .about-hero-content {
   flex: 1 1 0;
   min-width: 0;
 }
@@ -1001,7 +1003,8 @@ body:has(main > .hero) .join-section p {
 .contact-page .contact-hero-content .hero-actions {
   justify-content: flex-start;
 }
-.contact-page .contact-hero-logos {
+.contact-page .contact-hero-logos,
+.about-page .contact-hero-logos {
   display: flex;
   flex: 0 1 300px;
   flex-direction: column;
@@ -1010,7 +1013,8 @@ body:has(main > .hero) .join-section p {
   gap: 24px;
   min-width: 0;
 }
-.contact-page .contact-hero-logos img {
+.contact-page .contact-hero-logos img,
+.about-page .contact-hero-logos img {
   display: block;
   width: 100%;
   max-width: 230px;
@@ -1321,13 +1325,16 @@ body:has(main > .hero) .join-section p {
   .built-like-her-page .built-values-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .contact-page .contact-hero {
+  .contact-page .contact-hero,
+  .about-page .about-hero {
     gap: 30px;
   }
-  .contact-page .contact-hero-logos {
+  .contact-page .contact-hero-logos,
+  .about-page .contact-hero-logos {
     flex-basis: 250px;
   }
-  .contact-page .contact-hero-logos img {
+  .contact-page .contact-hero-logos img,
+  .about-page .contact-hero-logos img {
     max-width: 190px;
   }
 }
@@ -1510,12 +1517,14 @@ body:has(main > .hero) .join-section p {
     padding: 48px 5%;
   }
   /* Contact hero and logos */
-  .contact-page .contact-hero {
+  .contact-page .contact-hero,
+  .about-page .about-hero {
     flex-direction: column;
     gap: 30px;
     text-align: center;
   }
-  .contact-page .contact-hero-content {
+  .contact-page .contact-hero-content,
+  .about-page .about-hero-content {
     width: 100%;
   }
   .contact-page .contact-hero-content h1,
@@ -1527,14 +1536,16 @@ body:has(main > .hero) .join-section p {
     align-items: stretch;
     justify-content: center;
   }
-  .contact-page .contact-hero-logos {
+  .contact-page .contact-hero-logos,
+  .about-page .contact-hero-logos {
     flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     gap: 18px;
   }
-  .contact-page .contact-hero-logos img {
+  .contact-page .contact-hero-logos img,
+  .about-page .contact-hero-logos img {
     width: calc(50% - 12px);
     max-width: 145px;
     max-height: 110px;
