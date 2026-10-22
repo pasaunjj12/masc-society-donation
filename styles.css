@@ -998,6 +998,20 @@ body:has(main > .hero) .join-section p {
 .about-page .about-hero-content {
   margin: 0;
 }
+.about-page .about-hero-content {
+  width: auto;
+  max-width: none;
+  flex: 1 1 0;
+}
+.about-page .contact-hero-logos {
+  flex: 0 0 190px;
+  gap: 14px;
+}
+.about-page .contact-hero-logos img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 100px;
+}
 .contact-page .contact-hero-content h1,
 .contact-page .contact-hero-content p {
   margin-left: 0;
