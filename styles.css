@@ -830,9 +830,9 @@ body:has(main > .hero) .join-section p {
 .built-like-her-page .built-hero > .built-hero-tagline {
   display: block;
   width: 100%;
-  max-width: 700px;
-  margin: 12px 0 0 !important;
-  text-align: left !important;
+  max-width: 300px;
+  margin: 12px auto 0 !important;
+  text-align: center !important;
 }
 .built-like-her-page .built-statement {
   padding: 42px 6%;
