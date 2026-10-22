@@ -1733,11 +1733,11 @@ body:has(main > .hero) .join-section p {
 
   body.about-page main > section.about-hero > .contact-hero-logos {
     display: flex !important;
-    flex: 0 0 190px !important;
+    flex: 0 1 300px !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 14px !important;
+    gap: 24px !important;
     width: auto !important;
     min-width: 0 !important;
   }
@@ -1745,8 +1745,8 @@ body:has(main > .hero) .join-section p {
   body.about-page main > section.about-hero > .contact-hero-logos img {
     display: block !important;
     width: 100% !important;
-    max-width: 150px !important;
-    max-height: 100px !important;
+    max-width: 230px !important;
+    max-height: 155px !important;
     object-fit: contain !important;
   }
 }
