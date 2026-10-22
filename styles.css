@@ -1,44 +1,28 @@
-
-/* ==========================================================
+/* ==================================================
    MASC SOCIETY | BUILT LIKE HER
-   Complete White-Background Redesign
-   Hot Pink | Gold | Black | White
-   ========================================================== */
+   Unified Responsive Website Styles
+   Pink • Gold • Black • White
+================================================== */
 
-
-/* ==================== 1. BRAND COLORS ==================== */
+/* 1. BRAND VARIABLES */
 
 :root {
-  --pink: #E72A83;
-  --pink-dark: #C51D6C;
-  --pink-light: #FFF0F7;
-
-  --gold: #C99A3D;
-  --gold-dark: #8A651E;
-  --gold-light: #E8D3A5;
-
-  --black: #151515;
-  --black-soft: #333333;
-
-  --white: #FFFFFF;
-  --off-white: #FFFFFF;
-
-  --gray: #666666;
-  --gray-light: #E9E6E5;
-  --border: #E7E2E4;
-
-  --font-main: "Trebuchet MS", Arial, sans-serif;
-  --font-display: Georgia, "Times New Roman", serif;
-
-  --content-width: 1160px;
-  --section-space: 72px;
-
-  --radius: 10px;
-  --transition: 0.25s ease;
+  --masc-pink: #E72A83;
+  --masc-pink-dark: #C91D6D;
+  --masc-gold: #C99A3D;
+  --masc-gold-dark: #AD812E;
+  --masc-black: #151515;
+  --masc-white: #FFFFFF;
+  --masc-light: #F8F6F8;
+  --masc-muted: #68636A;
+  --masc-border: #E9E3E8;
+  --masc-shadow: 0 12px 30px rgba(21, 21, 21, 0.07);
+  --masc-shadow-hover: 0 18px 38px rgba(21, 21, 21, 0.12);
+  --masc-radius: 14px;
+  --masc-transition: 0.25s ease;
 }
 
-
-/* ==================== 2. RESET & GLOBAL STYLES ==================== */
+/* 2. GLOBAL RESET */
 
 * {
   box-sizing: border-box;
@@ -51,12 +35,12 @@ html {
 
 body {
   margin: 0;
-  background: var(--white);
-  color: var(--black);
-  font-family: var(--font-main);
+  background: var(--masc-white);
+  color: var(--masc-black);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
 }
 
 img {
@@ -66,13 +50,13 @@ img {
 }
 
 a {
-  color: var(--pink-dark);
+  color: var(--masc-pink);
   text-decoration: none;
-  transition: color var(--transition);
+  transition: color var(--masc-transition);
 }
 
 a:hover {
-  color: var(--gold-dark);
+  color: var(--masc-gold-dark);
 }
 
 button,
@@ -82,50 +66,33 @@ textarea {
   font: inherit;
 }
 
-button,
-input[type="submit"] {
-  cursor: pointer;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 3px;
-}
-
-p {
-  margin: 0 0 18px;
-}
-
 h1,
 h2,
 h3,
 h4 {
   margin-top: 0;
-  color: var(--black);
-  line-height: 1.25;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   overflow-wrap: break-word;
 }
 
-h1,
-h2 {
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-
 h1 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+  font-weight: 800;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 800;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  font-weight: 750;
+}
+
+p {
+  margin-top: 0;
 }
 
 section {
@@ -133,38 +100,51 @@ section {
 }
 
 ::selection {
-  background: var(--pink);
-  color: var(--white);
+  color: var(--masc-white);
+  background: var(--masc-pink);
 }
 
+:focus-visible {
+  outline: 3px solid var(--masc-gold);
+  outline-offset: 4px;
+}
 
-/* ==================== 3. SHARED LAYOUT ==================== */
+/* 3. SHARED SECTION STYLES */
 
 .section-padding {
-  padding: var(--section-space) 24px;
+  padding: 90px 6%;
 }
 
-.section-intro {
-  max-width: 720px;
-  margin: 0 auto 40px;
+.section-intro,
+.section-heading {
+  max-width: 780px;
+  margin: 0 auto 45px;
   text-align: center;
 }
 
-.section-intro p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: var(--gray);
+.section-intro h2,
+.section-heading h2 {
+  margin-bottom: 18px;
+  color: var(--masc-black);
 }
 
-.section-heading {
-  margin-bottom: 18px;
+.section-intro h2 span,
+.section-heading h2 span {
+  color: var(--masc-pink);
+}
+
+.section-intro p,
+.section-heading p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--masc-muted);
 }
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 14px;
-  color: var(--pink-dark);
-  font-size: 0.76rem;
+  margin-bottom: 17px;
+  color: var(--masc-pink);
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   line-height: 1.5;
@@ -173,106 +153,150 @@ section {
 
 .text-link {
   display: inline-block;
-  margin-top: 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--gold);
-  font-size: 0.92rem;
-  font-weight: 800;
+  color: var(--masc-pink);
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: var(--masc-gold);
+  text-underline-offset: 5px;
 }
 
-.mission-content,
-.story-content,
-.purpose-content,
-.built-mission-content,
-.impact-content,
-.built-impact-content,
-.donation-content,
-.contact-information,
-.about-hero-content,
-.built-hero-content,
-.built-statement,
-.community-standard {
-  width: 100%;
-  max-width: var(--content-width);
-  margin-right: auto;
-  margin-left: auto;
+.text-link:hover {
+  color: var(--masc-gold-dark);
 }
 
-.mission-content,
-.story-content,
-.purpose-content,
-.built-mission-content,
-.impact-content,
-.built-impact-content,
-.donation-content {
-  max-width: 900px;
+/* 4. BUTTONS */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
 }
 
-.mission-content p,
-.story-content p,
-.purpose-content p,
-.built-mission-content p,
-.impact-content p,
-.built-impact-content p,
-.donation-content p {
-  color: var(--gray);
+.hero-button,
+.secondary-button,
+.nav-button,
+.branch-link,
+button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 13px 25px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 0.94rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background var(--masc-transition),
+    color var(--masc-transition),
+    border-color var(--masc-transition),
+    box-shadow var(--masc-transition),
+    transform var(--masc-transition);
 }
 
+.hero-button,
+.nav-button,
+.branch-link,
+button[type="submit"] {
+  background: var(--masc-pink);
+  border-color: var(--masc-pink);
+  color: var(--masc-white);
+}
 
-/* ==================== 4. HEADER & NAVIGATION ==================== */
+.hero-button:hover,
+.nav-button:hover,
+.branch-link:hover,
+button[type="submit"]:hover {
+  background: var(--masc-pink-dark);
+  border-color: var(--masc-pink-dark);
+  color: var(--masc-white);
+  box-shadow: 0 7px 18px rgba(231, 42, 131, 0.2);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: var(--masc-gold);
+  border-color: var(--masc-gold);
+  color: var(--masc-black);
+}
+
+.secondary-button:hover {
+  background: var(--masc-gold-dark);
+  border-color: var(--masc-gold-dark);
+  color: var(--masc-black);
+  box-shadow: 0 7px 18px rgba(201, 154, 61, 0.22);
+  transform: translateY(-2px);
+}
+
+.hero-actions .hero-button,
+.hero-actions .secondary-button {
+  min-width: 190px;
+  min-height: 50px;
+}
+
+/* 5. HEADER & NAVIGATION */
 
 .site-header {
   position: relative;
   z-index: 10;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+  width: 100%;
+  background: var(--masc-black);
+  color: var(--masc-white);
+  border-bottom: 3px solid var(--masc-pink);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 26px;
+  gap: 28px;
   width: 100%;
-  max-width: 1320px;
+  max-width: 1440px;
   min-height: 88px;
   margin: 0 auto;
-  padding: 15px 30px;
-  background: var(--white);
+  padding: 15px 5%;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 0;
-  color: var(--black);
+  flex-shrink: 0;
+  color: var(--masc-white);
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .brand:hover {
-  color: var(--black);
+  color: var(--masc-white);
 }
 
 .brand-name {
-  color: var(--black);
-  font-family: var(--font-display);
-  font-size: 1.12rem;
-  font-weight: 700;
-  line-height: 1.25;
+  color: var(--masc-white);
+  font-weight: 800;
+  letter-spacing: 0.035em;
 }
 
 .brand-divider {
   width: 2px;
   height: 35px;
-  flex-shrink: 0;
-  background: var(--gold);
+  background: var(--masc-gold);
 }
 
 .brand-subtitle {
-  color: var(--gray);
-  font-size: 0.72rem;
-  line-height: 1.5;
-  letter-spacing: 0.03em;
+  display: block;
+  color: #D7D2D7;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -280,982 +304,1064 @@ section {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 10px 22px;
+  gap: 22px;
 }
 
 .nav-links a {
-  color: var(--black);
-  font-size: 0.85rem;
-  font-weight: 700;
-  white-space: nowrap;
+  color: var(--masc-white);
+  font-size: 0.91rem;
+  font-weight: 650;
+  transition: color var(--masc-transition);
 }
 
-.nav-links a:hover {
-  color: var(--pink-dark);
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--masc-gold);
 }
 
 .nav-links .nav-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
-  border: 1px solid var(--pink);
-  border-radius: 4px;
-  background: var(--pink);
-  color: var(--white);
+  min-height: 42px;
+  padding: 10px 17px;
+  color: var(--masc-white);
 }
 
-.nav-links .nav-button:hover {
-  border-color: var(--pink-dark);
-  background: var(--pink-dark);
-  color: var(--white);
-}
-
-
-/* ==================== 5. BUTTONS ==================== */
-
-.hero-button,
-.secondary-button,
-.branch-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 12px 22px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  line-height: 1.4;
-  text-align: center;
-  transition:
-    background var(--transition),
-    color var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
-}
-
-.hero-button {
-  border-color: var(--pink);
-  background: var(--pink);
-  color: var(--white);
-}
-
-.hero-button:hover {
-  border-color: var(--pink-dark);
-  background: var(--pink-dark);
-  color: var(--white);
-  transform: translateY(-2px);
-}
-
-.secondary-button {
-  border-color: var(--gold);
-  background: var(--white);
-  color: var(--black);
-}
-
-.secondary-button:hover {
-  border-color: var(--gold);
-  background: var(--gold);
-  color: var(--black);
-}
-
-.branch-link {
-  border-color: var(--black);
-  background: var(--black);
-  color: var(--white);
-}
-
-.branch-link:hover {
-  border-color: var(--pink);
-  background: var(--pink);
-  color: var(--white);
-  transform: translateY(-2px);
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 13px;
-  margin-top: 26px;
-}
-
-
-/* ==================== 6. HOMEPAGE HERO ==================== */
-
-.hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(200px, 0.7fr);
-  align-items: center;
-  gap: 42px;
-  min-height: 400px;
-  padding: 65px max(6%, calc((100% - var(--content-width)) / 2));
-  overflow: hidden;
-  background: var(--white);
-  color: var(--black);
-  border-bottom: 1px solid var(--border);
-}
-
-.hero::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: var(--pink);
-  content: "";
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-}
-
-.hero h1 {
-  max-width: 720px;
-  margin-bottom: 20px;
-  color: var(--black);
-}
-
-.hero h1 span {
-  color: var(--pink-dark);
-}
-
-.hero-description {
-  max-width: 590px;
-  color: var(--gray);
-  font-size: 1.02rem;
-  line-height: 1.85;
-}
-
-.hero .eyebrow {
-  color: var(--pink-dark);
-}
-
-.hero-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  min-width: 0;
-}
-
-.logo-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: min(100%, 165px);
-  height: 135px;
-  padding: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--white);
-}
-
-.logo-card img {
-  width: 100%;
-  height: 100%;
-  max-height: 110px;
-  object-fit: contain;
-}
-
-
-/* ==================== 7. HOMEPAGE VALUES ==================== */
-
-.values {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 24px;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-}
-
-.value-item {
-  padding: 25px 18px;
-  border-right: 1px solid var(--border);
-  text-align: center;
-}
-
-.value-item:last-child {
-  border-right: 0;
-}
-
-.value-number {
-  display: block;
-  margin-bottom: 7px;
-  color: var(--pink-dark);
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.value-item p {
-  margin: 0;
-  color: var(--gray);
-  font-size: 0.85rem;
-}
-
-
-/* ==================== 8. MISSION SECTION ==================== */
-
-.mission {
-  background: var(--white);
-}
-
-.mission-content {
-  display: block;
-  max-width: 850px;
-}
-
-.mission-content p {
-  margin-bottom: 18px;
-}
-
-.mission-content h2 {
-  margin-bottom: 0;
-}
-
-.mission-content > div > p {
-  color: var(--gray);
-}
-
-
-/* ==================== 9. BRANCH CARDS ==================== */
-
-.branch-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto;
-}
-
-.branch-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 30px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.035);
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.branch-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.075);
-}
-
-.masc-card {
-  border-top: 4px solid var(--pink);
-}
-
-.built-card {
-  border-top: 4px solid var(--gold);
-}
-
-.branch-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 155px;
-  height: 105px;
-  margin: 0 auto 22px;
-  padding: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: var(--white);
-}
-
-.branch-logo img {
-  width: 100%;
-  height: 100%;
-  max-height: 85px;
-  object-fit: contain;
-}
-
-.branch-label {
-  margin-bottom: 9px;
-  color: var(--pink-dark);
-  font-size: 0.73rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.built-card .branch-label {
-  color: var(--gold-dark);
-}
-
-.branch-card h3 {
-  margin-bottom: 12px;
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-}
-
-.branch-card p {
-  flex-grow: 1;
-  color: var(--gray);
-}
-
-.branch-card .branch-link {
-  margin-top: 12px;
-}
-
-
-/* ==================== 10. IMPACT & CALL TO ACTION ==================== */
-
-.impact,
-.built-impact {
-  background: var(--white);
-}
-
-.impact-content,
-.built-impact-content {
-  text-align: center;
-}
-
-.impact-content p,
-.built-impact-content p {
-  max-width: 720px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.join-section,
-.about-cta,
-.built-cta {
-  padding: 62px 24px;
-  background: var(--white);
-  color: var(--black);
-  text-align: center;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.join-section h2,
-.about-cta h2,
-.built-cta h2 {
-  max-width: 750px;
-  margin: 0 auto 18px;
-  color: var(--black);
-}
-
-.join-section p,
-.about-cta p,
-.built-cta p {
-  max-width: 660px;
-  margin: 0 auto 24px;
-  color: var(--gray);
-}
-
-
-/* ==================== 11. ABOUT PAGE ==================== */
-
-.about-hero {
-  padding: 65px 24px;
-  background: var(--white);
-  color: var(--black);
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-
-.about-hero-content {
-  max-width: 850px;
-}
-
-.about-hero h1 {
-  margin-bottom: 18px;
-}
-
-.about-hero p {
-  max-width: 700px;
-  margin: 0 auto;
-  color: var(--gray);
-  font-size: 1.02rem;
-}
-
-.about-hero .eyebrow {
-  color: var(--pink-dark);
-}
-
-.about-story {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-}
-
-.story-content {
-  max-width: 860px;
-}
-
-.story-content h2,
-.purpose-content h2 {
-  margin-bottom: 22px;
-}
-
-.story-content p,
-.purpose-content p {
-  color: var(--gray);
-}
-
-.about-purpose {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.purpose-content {
-  max-width: 900px;
-}
-
-.about-values {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto;
-}
-
-.value-card {
-  padding: 26px 23px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--white);
-}
-
-.value-card h3 {
-  margin-bottom: 12px;
-  color: var(--pink-dark);
-}
-
-.value-card p {
-  margin-bottom: 0;
-  color: var(--gray);
-  font-size: 0.94rem;
-}
-
-.about-branches {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-}
-
-
-/* ==================== 12. BUILT LIKE HER PAGE ==================== */
-
-.built-like-her-page {
-  background: var(--white);
-}
-
-.built-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(170px, 0.6fr);
-  align-items: center;
-  gap: 42px;
-  padding: 68px max(6%, calc((100% - var(--content-width)) / 2));
-  background: var(--white);
-  color: var(--black);
-  border-bottom: 1px solid var(--border);
-}
-
-.built-hero-content {
-  max-width: 760px;
-  margin: 0;
-}
-
-.built-hero h1 {
-  margin-bottom: 18px;
-}
-
-.built-hero-description {
-  max-width: 650px;
-  color: var(--gray);
-  font-size: 1.02rem;
-}
-
-.built-hero .eyebrow {
-  color: var(--pink-dark);
-}
-
-.built-hero-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 180px;
-  height: 150px;
-  justify-self: center;
-  padding: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--white);
-}
-
-.built-hero-logo img {
-  width: 100%;
-  height: 100%;
-  max-height: 125px;
-  object-fit: contain;
-}
-
-.built-statement {
-  max-width: 860px;
-  padding: 55px 24px;
-  background: var(--white);
-  text-align: center;
-}
-
-.built-statement h2 {
-  margin-bottom: 18px;
-}
-
-.built-statement p {
-  color: var(--gray);
-}
-
-.built-mission {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.built-mission-content {
-  max-width: 900px;
-}
-
-.built-values {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-}
-
-.built-values-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto;
-}
-
-.built-value-card {
-  padding: 24px 20px;
-  border: 1px solid var(--border);
-  border-bottom: 3px solid var(--gold);
-  border-radius: 7px;
-  background: var(--white);
-}
-
-.built-value-card h3 {
-  color: var(--pink-dark);
-}
-
-.built-value-card p {
-  margin-bottom: 0;
-  color: var(--gray);
-  font-size: 0.93rem;
-}
-
-.parent-organization {
-  display: grid;
-  grid-template-columns: 115px minmax(0, 1fr);
-  align-items: center;
-  gap: 25px;
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 28px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--white);
-}
-
-.parent-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 115px;
-  height: 95px;
-  padding: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: var(--white);
-}
-
-.parent-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.parent-organization p {
-  color: var(--gray);
-}
-
-
-/* ==================== 13. CONTACT PAGE ==================== */
-
-.contact-page {
-  background: var(--white);
-}
+/* 6. SHARED HERO DESIGN */
 
+.hero,
+.about-hero,
+.built-hero,
 .contact-hero {
-  padding: 58px 24px;
-  background: var(--white);
-  color: var(--black);
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-
-.contact-hero h1 {
-  margin-bottom: 16px;
-}
-
-.contact-hero p {
-  max-width: 680px;
-  margin: 0 auto;
-  color: var(--gray);
-}
-
-
-/* ==================== 14. MEMBERSHIP REQUIREMENTS ==================== */
-
-.requirements-section {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-}
-
-.requirements-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.requirement-card {
   position: relative;
-  padding: 21px 22px 21px 26px;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  background: var(--white);
-}
-
-.requirement-card::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 4px;
-  border-radius: 7px 0 0 7px;
-  background: var(--pink);
-  content: "";
-}
-
-.requirement-card h3 {
-  margin-bottom: 9px;
-  font-size: 1.04rem;
-}
-
-.requirement-card p {
-  margin-bottom: 0;
-  color: var(--gray);
-  font-size: 0.93rem;
-}
-
-.community-standard {
-  max-width: 1000px;
-  margin-top: 36px;
-  padding: 28px;
-  border: 1px solid var(--gold-light);
-  border-radius: 7px;
-  background: var(--white);
-  text-align: center;
-}
-
-.community-standard h2 {
-  margin-bottom: 14px;
-  font-size: 1.7rem;
-}
-
-.community-standard p {
-  max-width: 760px;
-  margin: 0 auto;
-  color: var(--gray);
-}
-
-
-/* ==================== 15. MEMBERSHIP & CONTACT FORMS ==================== */
-
-.membership-section,
-.contact-section {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-}
-
-.contact-section {
-  border-top: 1px solid var(--border);
-}
-
-.membership-form,
-.contact-form {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.035);
-}
-
-.donor-field {
-  margin-bottom: 20px;
-}
-
-.donor-label,
-.membership-form label,
-.contact-form label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--black);
-  font-size: 0.91rem;
-  font-weight: 800;
-}
-
-.membership-form input:not([type="checkbox"]):not([type="radio"]),
-.membership-form select,
-.membership-form textarea,
-.contact-form input:not([type="checkbox"]):not([type="radio"]),
-.contact-form select,
-.contact-form textarea {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  padding: 12px 14px;
-  border: 1px solid #D6D0D2;
-  border-radius: 4px;
-  background: var(--white);
-  color: var(--black);
-  transition:
-    border-color var(--transition),
-    box-shadow var(--transition);
-}
-
-.membership-form input:focus,
-.membership-form select:focus,
-.membership-form textarea:focus,
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--pink);
-  box-shadow: 0 0 0 3px rgba(231, 42, 131, 0.12);
-  outline: none;
-}
-
-.membership-form textarea,
-.contact-form textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-
-.membership-form select,
-.contact-form select {
-  cursor: pointer;
-}
-
-.membership-form input::placeholder,
-.membership-form textarea::placeholder,
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #777777;
-  opacity: 1;
-}
-
-.form-consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  margin: 17px 0;
-  color: var(--gray);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.form-consent input[type="checkbox"] {
-  flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  margin-top: 4px;
-  accent-color: var(--pink);
-}
-
-.form-consent label {
-  margin: 0;
-  color: var(--gray);
-  font-weight: 400;
-}
-
-.membership-form button,
-.membership-form input[type="submit"],
-.contact-form button,
-.contact-form input[type="submit"] {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  max-width: 100%;
-  min-height: 46px;
-  padding: 12px 24px;
-  border: 1px solid var(--pink);
-  border-radius: 4px;
-  background: var(--pink);
-  color: var(--white);
-  font-weight: 800;
-  transition: background var(--transition);
-}
-
-.membership-form button:hover,
-.membership-form input[type="submit"]:hover,
-.contact-form button:hover,
-.contact-form input[type="submit"]:hover {
-  border-color: var(--pink-dark);
-  background: var(--pink-dark);
-}
-
-.form-note {
-  color: var(--gray);
-  font-size: 0.84rem;
-}
-
-
-/* ==================== 16. DONATIONS ==================== */
-
-.donation-section {
-  padding: var(--section-space) 24px;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.donation-content {
-  max-width: 850px;
-  text-align: center;
-}
-
-.donation-content h2 {
-  margin-bottom: 18px;
-}
-
-.donation-content p {
-  max-width: 700px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.donation-notice {
-  max-width: 700px;
-  margin: 25px auto 0;
-  padding: 20px 23px;
-  border: 1px solid var(--gold-light);
-  border-radius: 7px;
-  background: var(--white);
-  color: var(--gray);
+  overflow: hidden;
+  padding: 105px 6%;
+  background:
+    radial-gradient(
+      ellipse at 90% 15%,
+      rgba(201, 154, 61, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 5% 80%,
+      rgba(231, 42, 131, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(135deg, #FFFFFF 0%, #FBF8FA 100%);
   text-align: left;
 }
 
-.donation-notice strong {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--black);
+.hero-content,
+.about-hero-content,
+.built-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-.donation-notice p:last-child {
-  margin-bottom: 0;
+.hero h1,
+.about-hero h1,
+.built-hero h1,
+.contact-hero h1 {
+  max-width: 850px;
+  margin: 0 0 24px;
+  color: var(--masc-black);
+  font-size: clamp(2.6rem, 5.6vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
+.hero h1 span,
+.about-hero h1 span,
+.built-hero h1 span,
+.contact-hero h1 span,
+.hero .highlight {
+  color: var(--masc-pink);
+}
 
-/* ==================== 17. CONTACT INFORMATION ==================== */
+.hero p,
+.about-hero p,
+.built-hero p,
+.contact-hero p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--masc-muted);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.85;
+}
 
-.contact-information {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+/* ==================================================
+   7. HOMEPAGE
+   KEEP THE EXISTING HOMEPAGE DESIGN
+================================================== */
+
+body:has(main > .hero) main {
+  background: var(--masc-white);
+}
+
+body:has(main > .hero) .hero {
+  padding-top: 115px;
+  padding-bottom: 95px;
+  background:
+    radial-gradient(
+      ellipse at 90% 15%,
+      rgba(201, 154, 61, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 5% 80%,
+      rgba(231, 42, 131, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(135deg, #FFFFFF 0%, #FBF8FA 100%);
+  text-align: left;
+}
+
+body:has(main > .hero) .hero-content {
+  max-width: 1120px;
+}
+
+body:has(main > .hero) .hero h1 {
+  max-width: 850px;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--masc-black);
+}
+
+body:has(main > .hero) .hero h1 span,
+body:has(main > .hero) .hero .highlight {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .hero p {
+  max-width: 700px;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--masc-muted);
+}
+
+body:has(main > .hero) .hero-actions {
+  justify-content: flex-start;
+}
+
+body:has(main > .hero) .hero-logos {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
   max-width: 900px;
-  margin-top: 40px;
+  margin: 55px auto 0;
 }
 
-.contact-information > div {
-  padding: 25px;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  background: var(--white);
+body:has(main > .hero) .logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(230px, 100%);
+  min-height: 145px;
+  padding: 24px;
+  overflow: hidden;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+  transition:
+    transform var(--masc-transition),
+    box-shadow var(--masc-transition);
 }
 
-.contact-information h3 {
-  margin-bottom: 12px;
-  color: var(--pink-dark);
+body:has(main > .hero) .logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--masc-shadow-hover);
 }
 
-.contact-information p {
-  margin-bottom: 8px;
-  color: var(--gray);
-  overflow-wrap: anywhere;
+body:has(main > .hero) .logo-card img {
+  width: 100%;
+  max-width: 180px;
+  max-height: 100px;
+  margin: auto;
+  object-fit: contain;
 }
 
-.contact-information p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* ==================== 18. FOOTER ==================== */
-
-.site-footer {
-  padding: 42px 24px 20px;
-  background: var(--white);
-  color: var(--black);
-  border-top: 2px solid var(--pink);
-}
-
-.footer-brand {
-  max-width: 1160px;
-  margin: 0 auto 24px;
+body:has(main > .hero) .values {
+  padding: 90px 6%;
+  background: var(--masc-light);
   text-align: center;
 }
 
-.footer-brand h2 {
-  margin-bottom: 8px;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
+body:has(main > .hero) .values h2 {
+  color: var(--masc-black);
 }
 
-.footer-brand p {
-  color: var(--gray);
-  font-size: 0.9rem;
+body:has(main > .hero) .values h2 span {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .value-item {
+  padding: 25px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+}
+
+body:has(main > .hero) .value-item h3 {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .value-item p {
+  color: var(--masc-muted);
+}
+
+body:has(main > .hero) .value-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--masc-pink);
+  color: var(--masc-white);
+  font-weight: 800;
+}
+
+body:has(main > .hero) .mission {
+  padding: 90px 6%;
+  background: var(--masc-white);
+  text-align: center;
+}
+
+body:has(main > .hero) .mission h2 {
+  color: var(--masc-black);
+}
+
+body:has(main > .hero) .mission h2 span {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .mission p {
+  color: var(--masc-muted);
+}
+
+body:has(main > .hero) .mission-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+body:has(main > .hero) .branches {
+  padding: 90px 6%;
+  background: var(--masc-light);
+  text-align: center;
+}
+
+body:has(main > .hero) .branches h2 {
+  color: var(--masc-black);
+}
+
+body:has(main > .hero) .branches h2 span {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .branches p {
+  color: var(--masc-muted);
+}
+
+body:has(main > .hero) .branch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1050px;
+  margin: 42px auto 0;
+  text-align: left;
+}
+
+body:has(main > .hero) .branch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-top: 4px solid var(--masc-pink);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+  transition:
+    transform var(--masc-transition),
+    box-shadow var(--masc-transition);
+}
+
+body:has(main > .hero) .branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--masc-shadow-hover);
+}
+
+body:has(main > .hero) .branch-card h3 {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .branch-card p {
+  color: var(--masc-muted);
+}
+
+body:has(main > .hero) .branch-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 140px;
+  margin-bottom: 22px;
+  padding: 16px;
+  overflow: hidden;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: 10px;
+}
+
+body:has(main > .hero) .branch-logo img {
+  width: 100%;
+  max-width: 200px;
+  max-height: 120px;
+  margin: auto;
+  object-fit: contain;
+}
+
+body:has(main > .hero) .branch-link {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* IMPORTANT: Homepage impact section stays black */
+
+body:has(main > .hero) .impact {
+  padding: 90px 6%;
+  background: var(--masc-black);
+  color: var(--masc-white);
+  text-align: center;
+}
+
+body:has(main > .hero) .impact h2 {
+  color: var(--masc-gold);
+}
+
+body:has(main > .hero) .impact p {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #E8E5E8;
+}
+
+body:has(main > .hero) .join-section {
+  padding: 90px 6%;
+  background: var(--masc-white);
+  text-align: center;
+}
+
+body:has(main > .hero) .join-section h2 {
+  color: var(--masc-black);
+}
+
+body:has(main > .hero) .join-section h2 span {
+  color: var(--masc-pink);
+}
+
+body:has(main > .hero) .join-section p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--masc-muted);
+}
+
+/* ==================================================
+   8. ABOUT US PAGE
+================================================== */
+
+.about-page main {
+  background: var(--masc-white);
+}
+
+.about-page .about-hero {
+  padding-top: 115px;
+  padding-bottom: 95px;
+}
+
+.about-page .about-hero h1,
+.about-page .about-hero p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about-page .about-hero .hero-actions {
+  justify-content: flex-start;
+}
+
+.about-page .about-story {
+  background: var(--masc-white);
+}
+
+.about-page .story-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-page .story-content p {
+  color: var(--masc-muted);
+}
+
+.about-page .about-purpose {
+  background: var(--masc-light);
+}
+
+.about-page .purpose-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-page .purpose-content h2 {
+  color: var(--masc-black);
+}
+
+.about-page .purpose-content h2 span {
+  color: var(--masc-pink);
+}
+
+.about-page .purpose-content p {
+  color: var(--masc-muted);
+}
+
+.about-page .about-values {
+  background: var(--masc-white);
+}
+
+.about-page .values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.about-page .value-card {
+  padding: 30px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-top: 3px solid var(--masc-pink);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+  transition:
+    transform var(--masc-transition),
+    box-shadow var(--masc-transition);
+}
+
+.about-page .value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--masc-shadow-hover);
+}
+
+.about-page .value-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--masc-pink);
+  color: var(--masc-white);
+  font-weight: 800;
+}
+
+.about-page .value-card h3,
+.about-page .branch-card h3 {
+  color: var(--masc-pink);
+}
+
+.about-page .value-card p,
+.about-page .branch-card p {
+  color: var(--masc-muted);
+}
+
+.about-page .about-branches {
+  background: var(--masc-light);
+}
+
+.about-page .about-branches .branch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.about-page .branch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-top: 4px solid var(--masc-pink);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+  transition:
+    transform var(--masc-transition),
+    box-shadow var(--masc-transition);
+}
+
+.about-page .branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--masc-shadow-hover);
+}
+
+.about-page .branch-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 140px;
+  margin-bottom: 22px;
+  padding: 16px;
+  overflow: hidden;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: 10px;
+}
+
+.about-page .branch-logo img {
+  width: 100%;
+  max-width: 200px;
+  max-height: 120px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.about-page .branch-link {
+  margin-top: auto;
+}
+
+/* LIGHT ABOUT PAGE CALL TO ACTION */
+
+.about-page .about-cta {
+  padding: 62px 6%;
+  background:
+    radial-gradient(
+      ellipse at 90% 10%,
+      rgba(201, 154, 61, 0.13),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #FFFFFF 0%, #FBF4F8 100%);
+  border-top: 1px solid var(--masc-border);
+  color: var(--masc-black);
+  text-align: center;
+}
+
+.about-page .about-cta h2 {
+  margin-bottom: 18px;
+  color: var(--masc-black);
+}
+
+.about-page .about-cta h2 span {
+  color: var(--masc-pink);
+}
+
+.about-page .about-cta p {
+  max-width: 740px;
+  margin: 0 auto 25px;
+  color: var(--masc-muted);
+}
+
+.about-page .about-cta .hero-actions {
+  justify-content: center;
+}
+
+/* ==================================================
+   9. BUILT LIKE HER PAGE
+================================================== */
+
+.built-like-her-page main {
+  background: var(--masc-white);
+}
+
+.built-like-her-page .built-hero {
+  padding-top: 115px;
+  padding-bottom: 95px;
+}
+
+.built-like-her-page .built-hero h1,
+.built-like-her-page .built-hero p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.built-like-her-page .built-hero .hero-actions {
+  justify-content: flex-start;
+}
+
+.built-like-her-page .built-hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(280px, 100%);
+  min-height: 175px;
+  margin: 38px 0 0;
+  padding: 20px;
+  overflow: hidden;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+}
+
+.built-like-her-page .built-hero-logo img {
+  width: 100%;
+  max-width: 230px;
+  max-height: 140px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.built-like-her-page .built-statement {
+  padding: 38px 6%;
+  background: var(--masc-pink);
+  color: var(--masc-white);
+  text-align: center;
+}
+
+.built-like-her-page .built-statement p {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--masc-white);
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-weight: 750;
+}
+
+.built-like-her-page .built-mission {
+  background: var(--masc-white);
+}
+
+.built-like-her-page .built-mission-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.built-like-her-page .built-mission-content h2,
+.built-like-her-page .built-impact-content h2 {
+  color: var(--masc-black);
+}
+
+.built-like-her-page .built-mission-content h2 span,
+.built-like-her-page .built-impact-content h2 span {
+  color: var(--masc-pink);
+}
+
+.built-like-her-page .built-mission-content p,
+.built-like-her-page .built-impact-content p {
+  color: var(--masc-muted);
+}
+
+.built-like-her-page .built-values {
+  background: var(--masc-light);
+}
+
+.built-like-her-page .built-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.built-like-her-page .built-value-card {
+  padding: 30px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-top: 3px solid var(--masc-pink);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+  transition:
+    transform var(--masc-transition),
+    box-shadow var(--masc-transition);
+}
+
+.built-like-her-page .built-value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--masc-shadow-hover);
+}
+
+.built-like-her-page .built-value-card h3 {
+  color: var(--masc-pink);
+}
+
+.built-like-her-page .built-value-card p {
+  color: var(--masc-muted);
+}
+
+/* LIGHTER IMPACT SECTION */
+
+.built-like-her-page .built-impact {
+  padding: 70px 6%;
+  background: var(--masc-light);
+}
+
+.built-like-her-page .built-impact-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.built-like-her-page .built-impact-content h2 {
+  color: var(--masc-black);
+}
+
+.built-like-her-page .built-impact-content h2 span {
+  color: var(--masc-pink);
+}
+
+.built-like-her-page .built-impact-content p {
+  color: var(--masc-muted);
+}
+
+.built-like-her-page .parent-organization {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 850px;
+  margin: 35px auto 0;
+  padding: 25px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+}
+
+.built-like-her-page .parent-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  min-height: 105px;
+  padding: 12px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: 10px;
+}
+
+.built-like-her-page .parent-logo img {
+  width: 100%;
+  max-width: 135px;
+  max-height: 85px;
+  margin: auto;
+  object-fit: contain;
+}
+
+/* LIGHT BUILT LIKE HER CALL TO ACTION */
+
+.built-like-her-page .built-cta {
+  padding: 62px 6%;
+  background:
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(231, 42, 131, 0.08),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 90% 10%,
+      rgba(201, 154, 61, 0.13),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #FFFFFF 0%, #FBF4F8 100%);
+  border-top: 1px solid var(--masc-border);
+  color: var(--masc-black);
+  text-align: center;
+}
+
+.built-like-her-page .built-cta h2 {
+  margin-bottom: 18px;
+  color: var(--masc-black);
+}
+
+.built-like-her-page .built-cta h2 span {
+  color: var(--masc-pink);
+}
+
+.built-like-her-page .built-cta p {
+  max-width: 740px;
+  margin: 0 auto 25px;
+  color: var(--masc-muted);
+}
+
+.built-like-her-page .built-cta .hero-actions {
+  justify-content: center;
+}
+
+/* ==================================================
+   10. CONTACT PAGE
+   PRESERVE EXISTING CONTACT DESIGN
+================================================== */
+
+.contact-page main {
+  background: var(--masc-white);
+}
+
+.contact-page .contact-hero {
+  padding-top: 115px;
+  padding-bottom: 95px;
+}
+
+.contact-page .contact-hero h1,
+.contact-page .contact-hero p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.contact-page .contact-hero .hero-actions {
+  justify-content: flex-start;
+}
+
+.contact-page .requirements-section {
+  background: var(--masc-light);
+}
+
+.contact-page .requirements-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-page .requirement-card {
+  padding: 28px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-left: 4px solid var(--masc-pink);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+  transition:
+    transform var(--masc-transition),
+    box-shadow var(--masc-transition);
+}
+
+.contact-page .requirement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--masc-shadow-hover);
+}
+
+.contact-page .requirement-card h3 {
+  color: var(--masc-pink);
+}
+
+.contact-page .requirement-card p {
+  color: var(--masc-muted);
+}
+
+.contact-page .community-standard {
+  max-width: 900px;
+  margin: 38px auto 0;
+  padding: 30px;
+  background: var(--masc-black);
+  border-radius: var(--masc-radius);
+  color: var(--masc-white);
+  text-align: center;
+}
+
+.contact-page .community-standard h3 {
+  color: var(--masc-gold);
+}
+
+.contact-page .standard-words {
+  color: var(--masc-white);
+}
+
+.contact-page .membership-section {
+  background: var(--masc-white);
+}
+
+.contact-page .membership-form,
+.contact-page .contact-form {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 34px;
+  background: var(--masc-white);
+  border: 1px solid var(--masc-border);
+  border-radius: var(--masc-radius);
+  box-shadow: var(--masc-shadow);
+}
+
+.contact-page .donor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.contact-page .donor-label,
+.contact-page label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--masc-black);
+  font-size: 0.94rem;
+  font-weight: 750;
+}
+
+.contact-page input,
+.contact-page select,
+.contact-page textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  background: var(--masc-white);
+  border: 1px solid #CEC6CD;
+  border-radius: 6px;
+  color: var(--masc-black);
+  outline: none;
+  transition:
+    border-color var(--masc-transition),
+    box-shadow var(--masc-transition);
+}
+
+.contact-page input:focus,
+.contact-page select:focus,
+.contact-page textarea:focus {
+  border-color: var(--masc-pink);
+  box-shadow: 0 0 0 3px rgba(231, 42, 131, 0.12);
+}
+
+.contact-page textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-page input[type="checkbox"],
+.contact-page input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  min-width: auto;
+  margin-right: 8px;
+  accent-color: var(--masc-pink);
+}
+
+.contact-page .form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+  color: var(--masc-muted);
+  font-size: 0.92rem;
+}
+
+.contact-page .form-consent input {
+  flex: 0 0 auto;
+  margin-top: 7px;
+}
+
+.contact-page button[type="submit"] {
+  width: 100%;
+}
+
+.contact-page .donation-section {
+  background: var(--masc-light);
+}
+
+.contact-page .donation-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-page .donation-content h2 {
+  color: var(--masc-black);
+}
+
+.contact-page .donation-content h2 span {
+  color: var(--masc-pink);
+}
+
+.contact-page .donation-content p {
+  color: var(--masc-muted);
+}
+
+.contact-page .donation-notice {
+  max-width: 760px;
+  margin: 28px auto 0;
+  padding: 22px;
+  background: var(--masc-white);
+  border-left: 4px solid var(--masc-gold);
+  border-radius: 8px;
+  color: var(--masc-muted);
+  text-align: left;
+}
+
+.contact-page .contact-section {
+  background: var(--masc-white);
+}
+
+.contact-page .contact-information {
+  max-width: 760px;
+  margin: 35px auto 0;
+  padding: 30px;
+  background: var(--masc-light);
+  border: 1px solid var(--masc-border);
+  border-radius: var(--masc-radius);
+  text-align: center;
+}
+
+.contact-page .contact-information h3 {
+  color: var(--masc-pink);
+}
+
+.contact-page .contact-information p {
+  color: var(--masc-muted);
+}
+
+/* ==================================================
+   11. SHARED FOOTER
+================================================== */
+
+.site-footer {
+  padding: 55px 6% 25px;
+  background: var(--masc-black);
+  border-top: 4px solid var(--masc-pink);
+  color: var(--masc-white);
+  text-align: center;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0 auto 28px;
+}
+
+.footer-logos img {
+  width: auto;
+  max-width: 105px;
+  max-height: 70px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.footer-brand {
+  margin-bottom: 8px;
+  color: var(--masc-white);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.tag-line {
+  margin-bottom: 22px;
+  color: var(--masc-gold);
+  font-style: italic;
 }
 
 .footer-links {
@@ -1263,616 +1369,447 @@ section {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px 25px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  gap: 12px 24px;
+  margin: 25px 0;
 }
 
 .footer-links a {
-  color: var(--black);
-  font-size: 0.85rem;
+  color: var(--masc-white);
+  font-size: 0.93rem;
+  font-weight: 650;
 }
 
 .footer-links a:hover {
-  color: var(--pink-dark);
+  color: var(--masc-gold);
 }
 
 .copyright {
-  margin: 19px auto 0;
-  color: var(--gray);
-  font-size: 0.78rem;
-  text-align: center;
+  margin: 25px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  color: #D4D0D4;
+  font-size: 0.85rem;
 }
 
+/* Compact footer on the two inner pages */
 
-/* ==================== 19. TABLET RESPONSIVENESS ==================== */
+.about-page .site-footer,
+.built-like-her-page .site-footer {
+  padding-top: 32px;
+  padding-bottom: 18px;
+}
 
-@media (max-width: 1000px) {
-  :root {
-    --section-space: 60px;
-  }
+.about-page .footer-logos,
+.built-like-her-page .footer-logos {
+  gap: 14px;
+  margin-bottom: 16px;
+}
 
+.about-page .footer-logos img,
+.built-like-her-page .footer-logos img {
+  max-width: 82px;
+  max-height: 55px;
+}
+
+/* ==================================================
+   12. TABLET RESPONSIVENESS
+================================================== */
+
+@media (max-width: 950px) {
   .navbar {
-    gap: 18px;
-    padding-right: 22px;
-    padding-left: 22px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .nav-links {
-    gap: 10px 14px;
+    justify-content: center;
+    gap: 14px 20px;
   }
 
-  .nav-links a {
-    font-size: 0.8rem;
+  .section-padding {
+    padding: 75px 5%;
   }
 
-  .hero {
-    grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 25px;
-    padding-right: 5%;
-    padding-left: 6%;
+  body:has(main > .hero) .hero {
+    padding-top: 90px;
   }
 
-  .hero-logos {
-    gap: 10px;
-  }
-
-  .logo-card {
-    height: 115px;
-    padding: 9px;
-  }
-
-  .logo-card img {
-    max-height: 95px;
-  }
-
-  .built-hero {
-    grid-template-columns: minmax(0, 1fr) 160px;
-    gap: 25px;
-  }
-
-  .values-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .built-values-grid {
+  .about-page .values-grid,
+  .built-like-her-page .built-values-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* ==================================================
+   13. MOBILE RESPONSIVENESS
+================================================== */
 
-/* ==================== 20. MOBILE RESPONSIVENESS ==================== */
-
-@media (max-width: 700px) {
-  :root {
-    --section-space: 46px;
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: 20px;
   }
 
-  body {
-    font-size: 15px;
+  section {
+    scroll-margin-top: 20px;
   }
-
-  h1 {
-    font-size: clamp(2rem, 9vw, 3rem);
-  }
-
-  h2 {
-    font-size: clamp(1.7rem, 7vw, 2.3rem);
-  }
-
-  .section-padding {
-    padding: var(--section-space) 20px;
-  }
-
-  .section-intro {
-    margin-bottom: 30px;
-  }
-
-  /* Mobile navigation */
 
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
     gap: 15px;
-    padding: 17px 18px;
+    padding: 18px 4%;
   }
 
   .brand {
     justify-content: center;
-    gap: 10px;
-  }
-
-  .brand-name {
-    font-size: 1.02rem;
-  }
-
-  .brand-subtitle {
-    font-size: 0.67rem;
+    flex-wrap: wrap;
+    gap: 9px;
+    font-size: 1rem;
+    text-align: center;
   }
 
   .brand-divider {
     height: 30px;
   }
 
+  .brand-subtitle {
+    font-size: 0.62rem;
+  }
+
   .nav-links {
-    justify-content: center;
-    gap: 10px 14px;
     width: 100%;
-  }
-
-  .nav-links a {
-    font-size: 0.79rem;
-  }
-
-  .nav-links .nav-button {
-    padding: 8px 11px;
-  }
-
-  /* Buttons */
-
-  .hero-actions {
     justify-content: center;
-  }
-
-  .hero-button,
-  .secondary-button {
-    padding: 11px 16px;
-  }
-
-  /* Homepage */
-
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 27px;
-    min-height: auto;
-    padding: 48px 22px 40px;
-    text-align: center;
-  }
-
-  .hero-content {
-    margin: 0 auto;
-  }
-
-  .hero-description {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.96rem;
-  }
-
-  .hero-logos {
-    gap: 12px;
-  }
-
-  .logo-card {
-    width: min(42%, 140px);
-    height: 100px;
-    padding: 8px;
-  }
-
-  .logo-card img {
-    max-height: 82px;
-  }
-
-  /* Values */
-
-  .values {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 0 12px;
-  }
-
-  .value-item {
-    padding: 19px 10px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .value-item:nth-child(2) {
-    border-right: 0;
-  }
-
-  .value-item:nth-child(3),
-  .value-item:nth-child(4) {
-    border-bottom: 0;
-  }
-
-  /* Mission */
-
-  .mission-content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  /* Branch cards */
-
-  .branch-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
-  }
-
-  .branch-card {
-    padding: 24px 21px;
-  }
-
-  .branch-logo {
-    height: 95px;
-    max-width: 140px;
-    margin-bottom: 19px;
-  }
-
-  .branch-logo img {
-    max-height: 77px;
-  }
-
-  .branch-card h3 {
-    font-size: 1.48rem;
-  }
-
-  /* About */
-
-  .about-hero {
-    padding: 48px 22px;
-  }
-
-  .about-hero p {
-    font-size: 0.96rem;
-  }
-
-  .values-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .value-card {
-    padding: 22px;
-  }
-
-  /* Built Like Her */
-
-  .built-hero {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-    padding: 48px 22px;
-    text-align: center;
-  }
-
-  .built-hero-content {
-    margin: 0 auto;
-  }
-
-  .built-hero-description {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.96rem;
-  }
-
-  .built-hero .hero-actions {
-    justify-content: center;
-  }
-
-  .built-hero-logo {
-    width: 135px;
-    height: 110px;
-    padding: 10px;
-  }
-
-  .built-hero-logo img {
-    max-height: 90px;
-  }
-
-  .built-statement {
-    padding: 42px 22px;
-  }
-
-  .built-values-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .built-value-card {
-    padding: 22px;
-  }
-
-  .parent-organization {
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
-    gap: 17px;
-    padding: 23px;
-    text-align: center;
-  }
-
-  .parent-logo {
-    width: 100px;
-    height: 82px;
-  }
-
-  /* Contact */
-
-  .contact-hero {
-    padding: 45px 22px;
-  }
-
-  .requirements-list {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 13px;
-  }
-
-  .requirement-card {
-    padding: 19px 17px 19px 23px;
-  }
-
-  .community-standard {
-    margin-top: 25px;
-    padding: 22px 18px;
-  }
-
-  /* Forms */
-
-  .membership-form,
-  .contact-form {
-    padding: 22px 17px;
-  }
-
-  .membership-form button,
-  .membership-form input[type="submit"],
-  .contact-form button,
-  .contact-form input[type="submit"] {
-    width: 100%;
-  }
-
-  .donation-notice {
-    padding: 17px;
-  }
-
-  .contact-information {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-    margin-top: 28px;
-  }
-
-  /* Footer */
-
-  .site-footer {
-    padding: 33px 18px 17px;
-  }
-
-  .footer-links {
     gap: 12px 17px;
   }
 
-  .footer-links a {
-    font-size: 0.81rem;
-  }
-}
-
-
-/* ==================== 21. SMALL PHONES ==================== */
-
-@media (max-width: 380px) {
-  .navbar {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .brand-name {
-    font-size: 0.94rem;
-  }
-
-  .brand-subtitle {
-    font-size: 0.61rem;
-  }
-
-  .nav-links {
-    gap: 10px 11px;
-  }
-
   .nav-links a {
-    font-size: 0.73rem;
+    font-size: 0.86rem;
   }
 
-  .hero {
-    padding-right: 16px;
-    padding-left: 16px;
+  .nav-links .nav-button {
+    min-height: 39px;
+    padding: 9px 13px;
+  }
+
+  .hero,
+  .about-hero,
+  .built-hero,
+  .contact-hero {
+    padding: 75px 5%;
+    text-align: center;
+  }
+
+  body:has(main > .hero) .hero {
+    padding: 75px 5%;
+    text-align: center;
+  }
+
+  body:has(main > .hero) .hero h1,
+  body:has(main > .hero) .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body:has(main > .hero) .hero-actions {
+    justify-content: center;
+  }
+
+  .hero h1,
+  .about-hero h1,
+  .built-hero h1,
+  .contact-hero h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(2.1rem, 8vw, 3.2rem);
+    letter-spacing: -0.035em;
+  }
+
+  .hero p,
+  .about-hero p,
+  .built-hero p,
+  .contact-hero p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+    line-height: 1.75;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .hero-actions a {
     width: 100%;
+    max-width: 340px;
+    margin: 26px auto 0;
   }
 
-  .logo-card {
-    height: 86px;
+  .hero-actions .hero-button,
+  .hero-actions .secondary-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
   }
 
-  .logo-card img {
-    max-height: 70px;
+  .section-padding {
+    padding: 62px 5%;
   }
 
-  .membership-form,
-  .contact-form {
-    padding: 18px 13px;
+  .section-intro,
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-intro h2,
+  .section-heading h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  body:has(main > .hero) .hero-logos {
+    gap: 14px;
+    margin-top: 36px;
+  }
+
+  body:has(main > .hero) .logo-card {
+    width: min(155px, 46%);
+    min-height: 105px;
+    padding: 14px;
+  }
+
+  body:has(main > .hero) .logo-card img {
+    max-height: 78px;
+  }
+
+  body:has(main > .hero) .branch-grid,
+  .about-page .about-branches .branch-grid,
+  .about-page .values-grid,
+  .built-like-her-page .built-values-grid,
+  .contact-page .requirements-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body:has(main > .hero) .branch-card,
+  .about-page .branch-card,
+  .about-page .value-card,
+  .built-like-her-page .built-value-card,
+  .contact-page .requirement-card {
+    padding: 24px;
+  }
+
+  .about-page .branch-logo {
+    min-height: 120px;
+  }
+
+  .about-page .branch-logo img {
+    max-height: 100px;
+  }
+
+  .built-like-her-page .built-hero-logo {
+    width: min(240px, 100%);
+    min-height: 145px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .built-like-her-page .parent-organization {
+    padding: 20px;
+  }
+
+  .about-page .about-cta,
+  .built-like-her-page .built-cta {
+    padding: 46px 5%;
+  }
+
+  .built-like-her-page .built-impact {
+    padding: 50px 5%;
+  }
+
+  .contact-page .membership-form,
+  .contact-page .contact-form {
+    padding: 24px 18px;
+  }
+
+  .contact-page .community-standard,
+  .contact-page .contact-information {
+    padding: 23px 18px;
+  }
+
+  .site-footer {
+    padding: 42px 5% 22px;
+  }
+
+  .about-page .site-footer,
+  .built-like-her-page .site-footer {
+    padding-top: 27px;
+    padding-bottom: 17px;
+  }
+
+  .footer-logos {
+    gap: 12px;
+  }
+
+  .footer-logos img {
+    max-width: 78px;
+    max-height: 55px;
+  }
+
+  .about-page .footer-logos img,
+  .built-like-her-page .footer-logos img {
+    max-width: 68px;
+    max-height: 48px;
+  }
+
+  .footer-links {
+    gap: 12px 18px;
   }
 }
 
+/* ==================================================
+   14. EXTRA-SMALL PHONES
+================================================== */
 
-/* ==================== 22. REDUCED MOTION ==================== */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+@media (max-width: 380px) {
+  .brand {
+    flex-direction: column;
   }
 
+  .brand-divider {
+    width: 38px;
+    height: 2px;
+  }
+
+  .nav-links {
+    gap: 10px 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .hero h1,
+  .about-hero h1,
+  .built-hero h1,
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  body:has(main > .hero) .logo-card {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .footer-logos img {
+    max-width: 68px;
+  }
+
+  .contact-page .membership-form,
+  .contact-page .contact-form {
+    padding: 20px 14px;
+  }
+}
+
+/* ==================================================
+   15. REDUCED MOTION ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-
-/* ==================== FINAL LAYOUT POLISH ==================== */
-
-/* Keep the homepage logos and their containers from cropping the artwork. */
-.hero-logos {
-  flex-wrap: wrap;
+.built-like-her-page .built-hero-logo {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.logo-card {
-  flex-direction: column;
-  flex: 0 1 150px;
-  width: 150px;
-  height: 120px;
-  gap: 0;
-}
-
-.logo-card img {
+.built-like-her-page .built-hero-description {
   display: block;
   width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  max-width: 700px;
+  margin: 24px auto 0 !important;
+  text-align: center !important;
 }
 
-/* Keep logo-only footer artwork compact instead of rendering at original size. */
-.footer-logos {
+
+/* Contact hero: text left, logos right */
+
+.contact-page .contact-hero {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0 auto 20px;
+  justify-content: space-between;
+  gap: 45px;
+  text-align: left;
 }
 
-.footer-logos img {
+.contact-page .contact-hero-content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.contact-page .contact-hero-content h1,
+.contact-page .contact-hero-content p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.contact-page .contact-hero-content .hero-actions {
+  justify-content: flex-start;
+}
+
+.contact-page .contact-hero-logos {
+  flex: 0 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.contact-page .contact-hero-logos img {
   display: block;
-  width: auto;
-  height: auto;
-  max-width: 112px;
-  max-height: 78px;
+  width: 100%;
+  max-width: 220px;
+  max-height: 150px;
   object-fit: contain;
 }
 
-/* The support button sits outside the navigation list, so style it directly. */
-.navbar > .nav-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  max-width: 100%;
-  padding: 10px 15px;
-  border: 1px solid var(--pink);
-  border-radius: 4px;
-  background: var(--pink);
-  color: var(--white);
-  font-size: 0.84rem;
-  font-weight: 800;
-  line-height: 1.4;
-  text-align: center;
-}
+/* Mobile layout */
 
-.navbar > .nav-button:hover {
-  border-color: var(--pink-dark);
-  background: var(--pink-dark);
-  color: var(--white);
-}
-
-/* Ensure images and form controls never stretch beyond their cards on small screens. */
-img {
-  max-width: 100%;
-}
-
-.membership-form,
-.contact-form {
-  box-sizing: border-box;
-}
-
-.membership-form input,
-.membership-form select,
-.membership-form textarea,
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  box-sizing: border-box;
-}
-
-@media (max-width: 700px) {
-  .navbar > .nav-button {
-    align-self: center;
-    width: fit-content;
+@media (max-width: 650px) {
+  .contact-page .contact-hero {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
   }
 
-  .logo-card {
-    flex-basis: 130px;
-    width: 130px;
-    height: 96px;
+  .contact-page .contact-hero-content h1,
+  .contact-page .contact-hero-content p {
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .footer-logos img {
-    max-width: 92px;
-    max-height: 64px;
+  .contact-page .contact-hero-content .hero-actions {
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .contact-page .contact-hero-logos {
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 18px;
+  }
+
+  .contact-page .contact-hero-logos img {
+    width: calc(50% - 12px);
+    max-width: 145px;
+    max-height: 110px;
   }
 }
-
-@media (max-width: 380px) {
-  .hero-logos {
-    gap: 8px;
-  }
-
-  .logo-card {
-    flex-basis: 118px;
-    width: 118px;
-    height: 88px;
-  }
-}
-
-
-/* HOMEPAGE: luxury editorial layout blended with original Masc Society colors */
-.home-page .hero{grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);gap:clamp(28px,5vw,70px);min-height:460px;padding-top:clamp(58px,7vw,94px);padding-bottom:clamp(58px,7vw,94px);background:linear-gradient(112deg,#fff 0%,#fff 68%,#fff5fa 100%)}
-.home-page .hero::before{width:6px;background:linear-gradient(to bottom,var(--pink) 0 68%,var(--gold) 68% 100%)}
-.home-page .hero h1{max-width:760px;font-size:clamp(2.7rem,5.3vw,4.7rem);letter-spacing:-.035em;line-height:1.08}
-.home-page .hero h1 span{display:block;margin-top:8px;color:var(--pink-dark)}
-.home-page .hero-description{max-width:570px;line-height:1.9}
-.home-page .hero-logos{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:16px;width:100%}
-.home-page .logo-card{width:min(100%,220px);height:145px;padding:15px;border-color:#eee6e9;border-radius:3px;box-shadow:0 12px 34px rgba(21,21,21,.055)}
-.home-page .logo-card img{width:100%;height:100%;max-height:115px;object-fit:contain}
-.home-page .values{max-width:none;padding:0 max(24px,calc((100% - var(--content-width))/2));background:#fff9fc;border-top:1px solid #f4e4ec;border-bottom:1px solid #f4e4ec}
-.home-page .value-item{padding:30px 20px}
-.home-page .value-number{color:var(--gold-dark);font-family:var(--font-main);font-size:.78rem;letter-spacing:.16em}
-.home-page .value-item h2{margin-bottom:9px;font-family:var(--font-main);font-size:1.05rem;font-weight:800}
-.home-page .value-item p{max-width:280px;margin:0 auto;line-height:1.65}
-.home-page .mission{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start;gap:clamp(32px,6vw,82px);max-width:none;padding:clamp(58px,7vw,94px) max(24px,calc((100% - var(--content-width))/2));background:#fff}
-.home-page .mission .section-intro{max-width:440px;margin:0;text-align:left}
-.home-page .mission .section-intro h2{font-size:clamp(2.15rem,3.8vw,3.3rem)}
-.home-page .mission .section-intro h2 span{color:var(--pink-dark)}
-.home-page .mission-content{max-width:650px;margin:0;padding-top:8px}
-.home-page .mission-content p{color:var(--black-soft);line-height:1.9}
-.home-page .branches{background:#fff8fb;border-top:1px solid #f4e4ec;border-bottom:1px solid #f4e4ec}
-.home-page .branches .section-heading{max-width:740px;margin:0 auto 38px;text-align:center}
-.home-page .branches .section-heading h2{margin-bottom:14px;font-size:clamp(2rem,3.7vw,3rem)}
-.home-page .branches .section-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--gray)}
-.home-page .branch-card{min-height:315px;padding:clamp(25px,3.4vw,42px);border:1px solid #ede3e7;border-top:4px solid var(--pink);border-radius:3px;box-shadow:0 12px 35px rgba(21,21,21,.045);background:#fff}
-.home-page .built-card{border-top-color:var(--gold)}
-.home-page .branch-label{margin-bottom:13px;font-size:.7rem;letter-spacing:.15em}
-.home-page .branch-card h3{margin-bottom:14px;font-size:clamp(1.55rem,2.4vw,2rem);letter-spacing:-.02em}
-.home-page .branch-card p:not(.branch-label){color:var(--gray);line-height:1.8}
-.home-page .branch-link{display:inline-flex;align-items:center;gap:8px;padding-bottom:5px;border-bottom:1px solid var(--gold);font-weight:800}
-.home-page .impact{background:var(--black);color:#fff}
-.home-page .impact h2{color:#fff;font-size:clamp(2rem,4vw,3.3rem)}
-.home-page .impact h2 span{display:block;color:#f0c76f}
-.home-page .impact .eyebrow{color:#f0c76f}
-.home-page .impact-content p{color:#f0f0f0;line-height:1.85}
-.home-page .impact .hero-button{margin-top:12px;background:var(--pink);color:#fff}
-.home-page .join-section{padding:clamp(55px,7vw,86px) 24px;background:#fff}
-.home-page .join-section h2{font-size:clamp(2rem,3.8vw,3rem)}
-.home-page .join-section p:not(.eyebrow){max-width:680px;margin:0 auto 25px;color:var(--gray)}
-@media(max-width:1000px){.home-page .hero{grid-template-columns:minmax(0,1fr) 200px;gap:28px}.home-page .logo-card{width:190px;height:125px}}
-@media(max-width:700px){.home-page .hero{grid-template-columns:minmax(0,1fr);gap:28px;padding:48px 22px 42px}.home-page .hero h1{font-size:clamp(2.35rem,10vw,3.25rem)}.home-page .hero-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:360px;margin:0 auto}.home-page .logo-card{width:100%;height:100px;padding:8px}.home-page .logo-card img{max-height:80px}.home-page .values{grid-template-columns:minmax(0,1fr);padding:0 20px}.home-page .value-item,.home-page .value-item:nth-child(2),.home-page .value-item:nth-child(3){padding:21px 12px;border-right:0;border-bottom:1px solid #f0e1e7}.home-page .value-item:last-child{border-bottom:0}.home-page .mission{grid-template-columns:minmax(0,1fr);gap:20px;padding:48px 22px}.home-page .mission .section-intro{max-width:100%}.home-page .mission-content{padding-top:0}.home-page .branch-card{min-height:0;padding:27px 23px}}
-@media(max-width:380px){.home-page .hero-logos{gap:8px}.home-page .logo-card{height:88px;padding:6px}}
