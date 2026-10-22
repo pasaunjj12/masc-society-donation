@@ -995,6 +995,9 @@ body:has(main > .hero) .join-section p {
   flex: 1 1 0;
   min-width: 0;
 }
+.about-page .about-hero-content {
+  margin: 0;
+}
 .contact-page .contact-hero-content h1,
 .contact-page .contact-hero-content p {
   margin-left: 0;
